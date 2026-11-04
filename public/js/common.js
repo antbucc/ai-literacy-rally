@@ -5,6 +5,11 @@
     scarto: 0,
     _sincronizzato: false,
     LETTERE: ['A', 'B', 'C', 'D', 'E', 'F'],
+    /** I simboli del Passaparola (stesso ordine degli indici del server). */
+    SIMBOLI: [
+      { e: '🍕', n: 'pizza' }, { e: '⚡', n: 'fulmine' }, { e: '👽', n: 'alieno' }, { e: '🚀', n: 'razzo' },
+      { e: '🌵', n: 'cactus' }, { e: '🍋', n: 'limone' }, { e: '🍩', n: 'ciambella' }, { e: '🤖', n: 'robot' },
+    ],
     /** La mascotte: un robottino disegnato a contorno spesso. */
     MASCOTTE: '<svg class="mascotte" viewBox="0 0 140 150" aria-hidden="true">' +
       '<g stroke="#2A2420" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">' +
@@ -109,6 +114,7 @@
       if (v == null) return '—';
       if (gioco === 'tap') return Math.round(v) + ' tocchi';
       if (gioco === 'riflessi') return Math.round(v) + ' punti';
+      if (gioco === 'duo') return (Math.round(v * 10) / 10).toString().replace('.', ',') + (v === 1 ? ' codice' : ' codici');
       if (gioco === 'sequenza') return 'livello ' + (Math.round(v * 10) / 10).toString().replace('.', ',');
       return String(Math.round(v));
     },

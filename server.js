@@ -56,6 +56,8 @@ const BONUS_INCONTRO = 50;
 const PREMI = [100, 70, 50, 35, 20, 10];
 const TURBO = [60, 30];
 const LIMITE_MG = { tap: 400, riflessi: 1800, sequenza: 60 };
+// "Passaparola": i simboli del codice da leggere e comporre in coppia
+const N_SIMBOLI = 8;
 const TIPI_INDICE = ['quiz', 'umano_ai', 'sala', 'sincronia'];
 const TIPI_LISTA = ['vero_falso', 'ordina', 'smista'];
 
@@ -262,6 +264,7 @@ function chiudi() {
   } else if (p.k === 'minigioco' && G.sub === 'pronti') {
     G.sub = 'gioco';
     G.deadline = Date.now() + (p.r.durata || 20) * 1000;
+    if (p.r.gioco === 'duo') formaCoppie();
     azioniBot();
     trasmetti();
     return true;
@@ -511,6 +514,91 @@ setInterval(() => {
   if (Date.now() >= G.deadline + margine) chiudi();
 }, 250);
 
+/* ---------------------------------------------------------- Passaparola: minigioco a coppie */
+
+/*
+ * In ogni squadra le persone giocano a coppie: chi "legge" vede il codice di simboli
+ * e lo dice ad alta voce, chi "compone" non lo vede e lo inserisce sul telefono.
+ * A ogni codice risolto il ruolo di chi legge passa al successivo e il codice si allunga.
+ * Nelle squadre dispari l'ultimo gruppo è un terzetto: uno legge, due compongono
+ * (vale chi lo inserisce giusto per primo). Si gioca da soli solo in squadre da uno.
+ */
+let coppieDuo = new Map(); // token -> gruppo { membri: [1-3 token], lettore: indice, codice: [...], risolti }
+
+function nuovoCodice(risolti) {
+  const lunghezza = Math.min(6, 4 + Math.floor(risolti / 3));
+  return Array.from({ length: lunghezza }, () => Math.floor(Math.random() * N_SIMBOLI));
+}
+
+function nuovaCoppia(membri) {
+  const c = { membri, lettore: Math.floor(Math.random() * membri.length), codice: nuovoCodice(0), risolti: 0 };
+  membri.forEach((t) => coppieDuo.set(t, c));
+  return c;
+}
+
+function formaCoppie() {
+  coppieDuo = new Map();
+  for (const s of G.squadre) {
+    // le persone giocano con persone, i bot con i bot
+    const presenti = s.membri.filter((t) => presente(giocatori.get(t)));
+    const umani = mescola(presenti.filter((t) => !giocatori.get(t).bot));
+    const bot = mescola(presenti.filter((t) => giocatori.get(t).bot));
+    for (const gruppo of [umani, bot]) {
+      // coppie; se sono dispari (e almeno 3) l'ultimo gruppo è un terzetto
+      const n = gruppo.length;
+      let i = 0;
+      while (i < n) {
+        const resto = n - i;
+        const quanti = resto === 3 ? 3 : Math.min(2, resto);
+        nuovaCoppia(gruppo.slice(i, i + quanti));
+        i += quanti;
+      }
+    }
+  }
+}
+
+/** La coppia di un giocatore; chi arriva a gioco iniziato gioca da solo. */
+function coppiaDi(t) {
+  if (!coppieDuo.has(t)) nuovaCoppia([t]);
+  return coppieDuo.get(t);
+}
+
+/** Chi compone: tutti tranne chi legge (o il giocatore stesso, se è da solo). */
+const puoComporre = (c, t) => c.membri.length === 1 || c.membri[c.lettore] !== t;
+const compositore = (c) => c.membri.find((t) => puoComporre(c, t));
+
+function tentativoDuo(t, valore) {
+  const c = coppiaDi(t);
+  if (!puoComporre(c, t)) return { ok: false, motivo: 'non tocca a te' };
+  if (!Array.isArray(valore) || valore.length !== c.codice.length) return { ok: false, motivo: 'lunghezza' };
+  const giusto = valore.every((x, i) => x === c.codice[i]);
+  if (giusto) {
+    c.risolti++;
+    c.membri.forEach((m) => G.mg.set(m, c.risolti));
+    c.lettore = (c.lettore + 1) % c.membri.length; // a turno, legge il successivo
+    c.codice = nuovoCodice(c.risolti);
+  }
+  return { ok: true, giusto };
+}
+
+function vistaDuo(t) {
+  const c = coppiaDi(t);
+  const solo = c.membri.length === 1;
+  const lettore = !solo && c.membri[c.lettore] === t;
+  const nome = (m) => (giocatori.get(m) || {}).nome;
+  // chi legge vede a chi parla; chi compone vede chi gli legge il codice (e l'eventuale "rivale")
+  const compagni = lettore ? c.membri.filter((m) => m !== t).map(nome) : solo ? [] : [nome(c.membri[c.lettore])];
+  const altri = !lettore && !solo ? c.membri.filter((m) => m !== t && m !== c.membri[c.lettore]).map(nome) : [];
+  return {
+    ruolo: solo ? 'solo' : lettore ? 'lettore' : 'pilota',
+    compagno: compagni.join(' e ') || null,
+    insieme: altri.length ? altri[0] : null,
+    codice: solo || lettore ? c.codice : null,
+    lunghezza: c.codice.length,
+    risolti: c.risolti,
+  };
+}
+
 /* ---------------------------------------------------------- giocatori automatici (prove) */
 
 const NOMI_BOT = ['Ada', 'Alan', 'Grace', 'Marvin', 'Fei-Fei', 'Geoffrey', 'Yann', 'Timnit', 'Joy', 'Kate', 'Yoshua', 'Margaret', 'Barbara', 'Hedy', 'Katherine', 'Tim'];
@@ -558,6 +646,19 @@ function azioniBot() {
     const durata = G.deadline - Date.now();
     const r = { ...p.r, tipo: tipoEffettivo(p.r) };
     bots.forEach((b) => dopo(1500 + Math.random() * durata * 0.6, () => G.risposte.set(b.token, rispostaBot(r))));
+  } else if (p.k === 'minigioco' && sub === 'gioco' && p.r.gioco === 'duo') {
+    // le coppie di bot risolvono un codice ogni 5-9 secondi
+    const fatte = new Set();
+    bots.forEach((b) => {
+      const c = coppiaDi(b.token);
+      if (fatte.has(c)) return;
+      fatte.add(c);
+      const prossimo = () => dopo(5000 + Math.random() * 4000, () => {
+        tentativoDuo(compositore(c), c.codice.slice());
+        prossimo();
+      });
+      prossimo();
+    });
   } else if (p.k === 'minigioco' && sub === 'gioco') {
     bots.forEach((b) => dopo(3000 + Math.random() * 5000, () => {
       const v = { tap: 40 + Math.random() * 60, riflessi: 400 + Math.random() * 800, sequenza: 2 + Math.random() * 6 }[p.r.gioco] || 0;
@@ -662,6 +763,7 @@ function vistaGiocatore(base, g) {
     me.giuste = Math.round(quotaGiusta(p.r, a) * elenco.length);
     me.su = elenco.length;
   }
+  if (p.k === 'minigioco' && G.sub === 'gioco' && p.r.gioco === 'duo' && g.squadra) me.duo = vistaDuo(t);
   if (p.k === 'podio' || p.k === 'lobby') {
     const c = classificaCorso().find((x) => x.token === t);
     if (c) me.corso = { punti: c.punti, posto: c.posto, su: campionato.size, partite: c.partite, vittorie: c.vittorie };
@@ -781,7 +883,11 @@ function azione(corpo) {
     const v = rispostaValida(p.r, corpo.valore);
     if (v === undefined) return [400, { errore: 'Risposta non valida.' }];
     G.risposte.set(g.token, v);
-  } else if (corpo.tipo === 'mg' && p.k === 'minigioco' && G.sub === 'gioco' && g.squadra) {
+  } else if (corpo.tipo === 'duo' && p.k === 'minigioco' && G.sub === 'gioco' && p.r.gioco === 'duo' && g.squadra) {
+    const esito = tentativoDuo(g.token, corpo.valore);
+    trasmetti();
+    return [200, esito];
+  } else if (corpo.tipo === 'mg' && p.k === 'minigioco' && G.sub === 'gioco' && g.squadra && p.r.gioco !== 'duo') {
     const v = Math.max(0, Math.min(Number(corpo.valore) || 0, LIMITE_MG[p.r.gioco] || 1000));
     G.mg.set(g.token, Math.max(G.mg.get(g.token) || 0, v));
   } else {

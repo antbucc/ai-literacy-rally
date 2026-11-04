@@ -199,10 +199,10 @@
         },
         {
           "tipo": "minigioco",
-          "gioco": "sequenza",
-          "nome": "Finestra di contesto",
-          "come": "Guarda la sequenza di colori e ripetila: ogni livello è più lungo. Conta il livello più alto raggiunto.",
-          "durata": 40
+          "gioco": "duo",
+          "nome": "Passaparola",
+          "come": "In coppia (o in tre): chi vede il codice di simboli lo legge ad alta voce, gli altri lo compongono senza guardare. A ogni codice risolto cambia chi legge. Conta la media della squadra.",
+          "durata": 50
         },
         {
           "tipo": "quiz",

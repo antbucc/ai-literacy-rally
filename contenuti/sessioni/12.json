@@ -157,10 +157,10 @@
         },
         {
           "tipo": "minigioco",
-          "gioco": "tap",
-          "nome": "Addestramento lampo",
-          "come": "Tocca il pulsante più veloce che puoi: ogni tocco è un ciclo di addestramento. Conta la media della squadra.",
-          "durata": 15
+          "gioco": "duo",
+          "nome": "Passaparola",
+          "come": "In coppia (o in tre): chi vede il codice di simboli lo legge ad alta voce, gli altri lo compongono senza guardare. A ogni codice risolto cambia chi legge. Conta la media della squadra.",
+          "durata": 50
         }
       ]
     }

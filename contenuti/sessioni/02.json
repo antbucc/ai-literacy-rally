@@ -132,10 +132,10 @@
         },
         {
           "tipo": "minigioco",
-          "gioco": "riflessi",
-          "nome": "Ferma l'allucinazione",
-          "come": "Quando lo schermo diventa verde, tocca! Se tocchi prima, l'allucinazione passa. Tre tentativi: conta la velocità.",
-          "durata": 25
+          "gioco": "duo",
+          "nome": "Passaparola",
+          "come": "In coppia (o in tre): chi vede il codice di simboli lo legge ad alta voce, gli altri lo compongono senza guardare. A ogni codice risolto cambia chi legge. Conta la media della squadra.",
+          "durata": 50
         }
       ]
     }

@@ -219,7 +219,8 @@
       }
       if (s.sub === 'gioco') {
         return fumetto('<span class="pillola-scura">Minigioco</span><h1>' + esc(m.nome) + '</h1>' +
-          '<div class="via-grande">Giocate sul telefono!</div><p class="nota"><b>' + m.inviati + '</b>/' + m.attesi + ' giocatori hanno già un punteggio</p>');
+          '<div class="via-grande">' + (m.gioco === 'duo' ? 'Leggete ad alta voce!' : 'Giocate sul telefono!') + '</div><p class="nota"><b>' + m.inviati + '</b>/' + m.attesi +
+          (m.gioco === 'duo' ? ' giocatori hanno già risolto almeno un codice' : ' giocatori hanno già un punteggio') + '</p>');
       }
       var e = m.esito.perSquadra;
       var ord = s.squadre.slice().sort(function (a, b) { return (e[b.id].media || 0) - (e[a.id].media || 0); });

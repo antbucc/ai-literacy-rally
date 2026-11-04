@@ -30,12 +30,13 @@ const CARTELLA = path.join(RADICE, 'contenuti', 'sessioni');
 const MG = {
   tap: { tipo: 'minigioco', gioco: 'tap', nome: 'Addestramento lampo', come: 'Tocca il pulsante più veloce che puoi: ogni tocco è un ciclo di addestramento. Conta la media della squadra.', durata: 15 },
   riflessi: { tipo: 'minigioco', gioco: 'riflessi', nome: "Ferma l'allucinazione", come: "Quando lo schermo diventa verde, tocca! Se tocchi prima, l'allucinazione passa. Tre tentativi: conta la velocità.", durata: 25 },
+  duo: { tipo: 'minigioco', gioco: 'duo', nome: 'Passaparola', come: "In coppia (o in tre): chi vede il codice di simboli lo legge ad alta voce, gli altri lo compongono senza guardare. A ogni codice risolto cambia chi legge. Conta la media della squadra.", durata: 50 },
   sequenza: { tipo: 'minigioco', gioco: 'sequenza', nome: 'Finestra di contesto', come: 'Guarda la sequenza di colori e ripetila: ogni livello è più lungo. Conta il livello più alto raggiunto.', durata: 40 },
 };
 const SCHEMI = {
-  A: [['quiz', 'vero_falso', MG.tap], ['sala', 'ordina', 'sincronia', 'turbo'], ['stima', 'quiz', MG.riflessi]],
-  B: [['quiz', 'smista', MG.sequenza], ['sincronia', 'quiz', 'vero_falso', 'turbo'], ['ordina', 'stima', MG.tap]],
-  C: [['vero_falso', 'quiz', MG.riflessi], ['smista', 'sala', 'quiz', 'turbo'], ['sincronia', 'stima', MG.sequenza]],
+  A: [['quiz', 'vero_falso', MG.tap], ['sala', 'ordina', 'sincronia', 'turbo'], ['stima', 'quiz', MG.duo]],
+  B: [['quiz', 'smista', MG.sequenza], ['sincronia', 'quiz', 'vero_falso', 'turbo'], ['ordina', 'stima', MG.duo]],
+  C: [['vero_falso', 'quiz', MG.riflessi], ['smista', 'sala', 'quiz', 'turbo'], ['sincronia', 'stima', MG.duo]],
 };
 
 /* ------------------------------------------------ schemi JSON per tipo */

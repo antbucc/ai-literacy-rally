@@ -14,7 +14,7 @@ import { fileURLToPath } from 'node:url';
 const RADICE = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CARTELLA = path.join(RADICE, 'contenuti', 'sessioni');
 const BREVE = process.argv.includes('--breve');
-const GIOCHI = ['tap', 'riflessi', 'sequenza'];
+const GIOCHI = ['tap', 'riflessi', 'sequenza', 'duo'];
 
 let errori = 0;
 const errore = (f, msg) => { errori++; console.log(`  ✗ ${f}: ${msg}`); };

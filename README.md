@@ -24,9 +24,10 @@ A ogni partita il gioco forma **squadre nuove** (colore + animale) e i compagni 
 | **La sala** | Indovina cosa sceglierà la maggioranza (domande d'opinione) | 100 × quota che indovina |
 | **Sintonia** | Senza parlarsi, la squadra deve dare la stessa risposta | 100 × quota della risposta più scelta |
 | **Minigiochi** | *tap*, *riflessi*, *sequenza* di colori | per posizione della media di squadra |
+| **Passaparola** (a coppie) | Uno vede un codice di simboli (🍕 ⚡ 👽 🚀…) e lo legge ad alta voce, il compagno lo compone senza vederlo; a ogni codice giusto cambia chi legge. Nelle squadre dispari l'ultimo gruppo è un terzetto (uno legge, due compongono: vale il più veloce) | per posizione della media di codici risolti |
 | **Turbo** | Le ultime due squadre ricevono una spinta | +60 / +30 |
 
-L'ultima tappa di ogni partita vale **punti doppi**.
+L'ultima tappa di ogni partita vale **punti doppi** e si chiude con il Passaparola, il minigioco a coppie dentro la squadra.
 
 ## Avvio in locale
 
@@ -89,7 +90,7 @@ Per modificare a mano una partita basta editare il JSON. Ecco i formati per ogni
 { "tipo": "sala", "testo": "…", "opzioni": ["…"], "spunto": "domanda per la discussione" }
 { "tipo": "sincronia", "testo": "Senza parlarvi! …", "opzioni": ["…"], "spunto": "…" }
 { "tipo": "umano_ai", "testo": "…", "brani": [{ "etichetta": "A", "testo": "…" }], "opzioni": ["A","B"], "corretta": 0, "spiegazione": "…" }
-{ "tipo": "minigioco", "gioco": "tap | riflessi | sequenza", "nome": "…", "come": "…", "durata": 20 }
+{ "tipo": "minigioco", "gioco": "tap | riflessi | sequenza | duo", "nome": "…", "come": "…", "durata": 20 }
 { "tipo": "turbo" }
 ```
 

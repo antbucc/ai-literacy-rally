@@ -385,6 +385,8 @@
       void app.offsetWidth;
       app.classList.add('entra');
       if (s.fase === 'domanda' && s.sub === 'aperta' && navigator.vibrate) navigator.vibrate(60);
+    } else if (inGioco && aggiornaDuo && me.duo) {
+      aggiornaDuo(me.duo);
     } else if (morbida !== chiaveMorbida && !inGioco && !interattivo) {
       chiaveMorbida = morbida;
       app.classList.remove('entra');
@@ -449,7 +451,7 @@
     }
     app.classList.remove('entra');
     app.innerHTML = '<div class="mg-gioco"><div class="mg-testa"><span>' + esc(m.nome) + '</span><span data-timer></span></div><div id="mg-area"></div></div>';
-    var ferma = (GIOCHI[m.gioco] || GIOCHI.tap)(document.getElementById('mg-area'), function (p) { punteggio = p; spedisci(false); });
+    var ferma = (GIOCHI[m.gioco] || GIOCHI.tap)(document.getElementById('mg-area'), function (p) { punteggio = p; spedisci(false); }, s);
     var intervallo = setInterval(function () {
       spedisci(false);
       if (U.rimasti(fine) <= 0) fermaMinigioco();
@@ -460,7 +462,88 @@
     if (mgAttivo) { var f = mgAttivo; mgAttivo = null; f(); }
   }
 
+  var aggiornaDuo = null; // il Passaparola si aggiorna a ogni stato dal server
+
   var GIOCHI = {
+    // Passaparola: in coppia, uno legge il codice di simboli e l'altro lo compone senza vederlo
+    duo: function (area, punta, s) {
+      var S_ = U.SIMBOLI;
+      var firma = null;
+      var digitati = [];
+      var ultimiRisolti = 0;
+      var attuale = null;
+      var bloccato = false;
+      function simbolo(i, grande) {
+        return '<span class="simbolo' + (grande ? ' grande' : '') + '"><span class="e">' + S_[i].e + '</span><span class="n">' + S_[i].n + '</span></span>';
+      }
+      function slot() {
+        var h = '';
+        for (var k = 0; k < attuale.lunghezza; k++) h += '<span class="slot">' + (digitati[k] != null ? S_[digitati[k]].e : '') + '</span>';
+        return h;
+      }
+      function aggiornaSlot() { var el = area.querySelector('.slots'); if (el) el.innerHTML = slot(); }
+      function disegna(d) {
+        if (!d) { area.innerHTML = '<p class="nota">Un attimo…</p>'; return; }
+        var f = [d.ruolo, d.risolti, (d.codice || []).join(','), d.lunghezza].join('|');
+        if (f === firma) return;
+        var nuovoRisolto = d.risolti > ultimiRisolti;
+        ultimiRisolti = d.risolti;
+        firma = f;
+        attuale = d;
+        digitati = [];
+        bloccato = false;
+        var testa = '<div class="duo-testa"><span class="pillola-scura">' +
+          (d.ruolo === 'lettore' ? '🗣️ Tu leggi' : d.ruolo === 'pilota' ? '👂 Tu componi' : '🧩 Da solo') + '</span>' +
+          '<span class="duo-conta">Codici: <b>' + d.risolti + '</b></span></div>' +
+          (nuovoRisolto ? '<div class="duo-bravo">✓ Codice giusto! Ora cambiano i ruoli</div>' : '');
+        if (d.ruolo === 'lettore') {
+          area.innerHTML = testa + '<p class="duo-consegna">Leggi il codice ad alta voce a <b>' + esc(d.compagno) + '</b>!</p>' +
+            '<div class="duo-codice">' + d.codice.map(function (i) { return simbolo(i, true); }).join('') + '</div>' +
+            '<p class="nota">' + (d.compagno && d.compagno.indexOf(' e ') > 0 ? 'Non lo vedono: tocca a te farglielo comporre, in ordine.' : 'Non lo vede: tocca a te farglielo comporre, in ordine.') + '</p>';
+          return;
+        }
+        area.innerHTML = testa +
+          (d.ruolo === 'pilota'
+            ? '<p class="duo-consegna">Ascolta <b>' + esc(d.compagno) + '</b> e componi il codice</p>' +
+              (d.insieme ? '<p class="nota">Lo compone anche <b>' + esc(d.insieme) + '</b>: vale chi arriva primo!</p>' : '')
+            : '<p class="duo-consegna">Componi questo codice:</p><div class="duo-codice piccolo">' + d.codice.map(function (i) { return simbolo(i); }).join('') + '</div>') +
+          '<div class="slots">' + slot() + '</div>' +
+          '<div class="tastiera">' + S_.map(function (x, i) { return '<button class="tasto" data-i="' + i + '">' + simbolo(i) + '</button>'; }).join('') + '</div>' +
+          '<button class="btn piccolo-btn" data-canc>⌫ Cancella</button>';
+        area.querySelectorAll('.tasto').forEach(function (b) {
+          b.addEventListener('pointerdown', function (e) {
+            e.preventDefault();
+            if (bloccato || digitati.length >= attuale.lunghezza) return;
+            digitati.push(Number(b.getAttribute('data-i')));
+            if (navigator.vibrate) navigator.vibrate(10);
+            aggiornaSlot();
+            if (digitati.length === attuale.lunghezza) {
+              bloccato = true;
+              invia('duo', digitati.slice()).then(function (r) {
+                if (r && r.giusto) return; // arriva lo stato nuovo dal server
+                var sl = area.querySelector('.slots');
+                if (sl) { sl.classList.remove('sbagliato'); void sl.offsetWidth; sl.classList.add('sbagliato'); }
+                if (navigator.vibrate) navigator.vibrate(150);
+                setTimeout(function () { digitati = []; bloccato = false; aggiornaSlot(); }, 500);
+              });
+            }
+          });
+        });
+        area.querySelector('[data-canc]').addEventListener('click', function () {
+          if (bloccato) return;
+          digitati.pop();
+          aggiornaSlot();
+        });
+      }
+      aggiornaDuo = disegna;
+      disegna(s && s.me && s.me.duo);
+      return function () {
+        aggiornaDuo = null;
+        bloccato = true;
+        area.innerHTML = '<div class="fatto-box"><div class="emoji">⏱️</div><h2>Tempo!</h2><p>Codici risolti dalla vostra coppia: <b>' + ultimiRisolti + '</b></p></div>';
+      };
+    },
+
     tap: function (area, punta) {
       var n = 0;
       area.innerHTML = '<div class="tap-conta">0</div><button class="tap-bottone">TOCCA!</button><p class="piccolo">Più veloce che puoi!</p>';

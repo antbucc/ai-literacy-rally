@@ -137,3 +137,29 @@ input::placeholder { color: #A8998A; }
 .stima-valore b { display: block; font-family: var(--titoli); font-size: 64px; line-height: 1; }
 .stima-valore span { color: var(--tenue); }
 input[type=range] { width: 100%; height: 40px; accent-color: var(--arancio); padding: 0; border: 0; background: transparent; }
+
+/* Passaparola (minigioco a coppie) */
+.duo-testa { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.duo-conta { font-family: var(--titoli); font-size: 20px; }
+.duo-bravo { width: 100%; text-align: center; background: var(--verde); border: 4px solid var(--inchiostro); border-radius: 16px; padding: 6px; font-weight: 800; animation: entra .3s both; }
+.duo-consegna { text-align: center; font-size: 19px; margin: 6px 0; }
+.duo-codice { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.simbolo { display: inline-flex; flex-direction: column; align-items: center; line-height: 1.1; }
+.simbolo .e { font-size: 34px; }
+.simbolo .n { font-size: 12px; font-weight: 800; color: var(--tenue); }
+.simbolo.grande { background: var(--bianco); border: 5px solid var(--inchiostro); border-radius: 22px; box-shadow: 0 6px 0 var(--inchiostro); padding: 10px 8px 8px; min-width: 76px; }
+.simbolo.grande .e { font-size: 50px; }
+.simbolo.grande .n { font-size: 15px; color: var(--inchiostro); }
+.duo-codice.piccolo .simbolo .e { font-size: 28px; }
+.slots { display: flex; justify-content: center; gap: 8px; margin: 6px 0; }
+.slot { width: 52px; height: 58px; border: 4px dashed var(--inchiostro); border-radius: 14px; display: grid; place-items: center; font-size: 32px; background: var(--bianco); }
+.slots.sbagliato { animation: scuoti .4s; }
+.slots.sbagliato .slot { border-color: var(--rosso); }
+@keyframes scuoti { 20%, 60% { transform: translateX(-10px); } 40%, 80% { transform: translateX(10px); } }
+.tastiera { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; width: 100%; }
+.tasto { border: 4px solid var(--inchiostro); border-radius: 16px; background: var(--bianco); padding: 6px 0; box-shadow: 0 4px 0 var(--inchiostro); touch-action: none; }
+.tasto:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--inchiostro); }
+.duo-codice { gap: 8px; }
+.simbolo.grande { min-width: 0; width: 76px; padding: 8px 2px 6px; }
+.simbolo.grande .e { font-size: 44px; }
+.simbolo.grande .n { font-size: 12px; }
