@@ -1,0 +1,166 @@
+{
+  "titolo": "Fidarsi, ma verificare",
+  "tema": "Valutazione critica degli output dell'AI: verifica delle fonti, allucinazioni, RAG, rilevatori di testo AI, deepfake, trasparenza e indicatori di qualità.",
+  "generato": {
+    "modello": "qwen2.5:14b",
+    "data": "2026-11-04",
+    "rivisto": true
+  },
+  "tappe": [
+    {
+      "nome": "Fonti e prove",
+      "doppi": false,
+      "round": [
+        {
+          "tipo": "vero_falso",
+          "affermazioni": [
+            {
+              "testo": "I rilevatori di testo AI sono sempre affidabili.",
+              "vero": false
+            },
+            {
+              "testo": "Le allucinazioni sono affermazioni false ma plausibili generate dall'AI.",
+              "vero": true
+            },
+            {
+              "testo": "Il RAG aiuta a ridurre le allucinazioni dell'AI.",
+              "vero": true
+            },
+            {
+              "testo": "I deepfake non devono essere etichettati come tali.",
+              "vero": false
+            },
+            {
+              "testo": "Verificare le fonti è un'abilità cruciale per valutare l'output dell'AI.",
+              "vero": true
+            },
+            {
+              "testo": "I chatbot non devono dichiarare di essere un'AI.",
+              "vero": false
+            }
+          ],
+          "spiegazione": "I rilevatori di testo AI sbagliano spesso; RAG e verifica delle fonti riducono gli errori. Per l'AI Act i chatbot devono dichiararsi e i deepfake vanno etichettati."
+        },
+        {
+          "tipo": "quiz",
+          "testo": "Se un modello di AI produce un risultato basato su una fonte web non affidabile, cosa dovresti fare?",
+          "opzioni": [
+            "Usare comunque il risultato",
+            "Cercare la stessa informazione su fonti affidabili",
+            "Chiedo al modello di confermare che la fonte è affidabile",
+            "Rifiutare qualsiasi output dell'AI"
+          ],
+          "corretta": 1,
+          "spiegazione": "Si verifica su fonti indipendenti e affidabili. Chiedere conferma allo stesso modello non basta: può confermare con sicurezza anche un errore."
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "riflessi",
+          "nome": "Ferma l'allucinazione",
+          "come": "Quando lo schermo diventa verde, tocca! Se tocchi prima, l'allucinazione passa. Tre tentativi: conta la velocità.",
+          "durata": 25
+        }
+      ]
+    },
+    {
+      "nome": "Deepfake e trasparenza",
+      "doppi": false,
+      "round": [
+        {
+          "tipo": "smista",
+          "testo": "Smista: fonte affidabile o da verificare?",
+          "categorie": [
+            "Fonte affidabile",
+            "Da verificare"
+          ],
+          "elementi": [
+            {
+              "testo": "Il testo ufficiale del regolamento sulla Gazzetta UE",
+              "categoria": 0
+            },
+            {
+              "testo": "Una citazione con numero di pagina proposta da un chatbot",
+              "categoria": 1
+            },
+            {
+              "testo": "Una statistica senza fonte in un post virale",
+              "categoria": 1
+            },
+            {
+              "testo": "Il sito istituzionale dell'ente che ha prodotto il dato",
+              "categoria": 0
+            },
+            {
+              "testo": "Lo screenshot di una \"notizia\" sui social",
+              "categoria": 1
+            },
+            {
+              "testo": "Un articolo scientifico pubblicato e consultabile",
+              "categoria": 0
+            }
+          ],
+          "spiegazione": "Un'informazione è affidabile quando si può risalire alla fonte originale. Citazioni prodotte da un chatbot, screenshot e dati senza fonte vanno sempre verificati."
+        },
+        {
+          "tipo": "sala",
+          "testo": "Quale contenuto generato dall'AI pensate sia più difficile da riconoscere per la sala?",
+          "opzioni": [
+            "Un'immagine",
+            "Una voce (audio)",
+            "Un video",
+            "Un testo"
+          ],
+          "spunto": "Vi è capitato di non accorgervi che qualcosa era generato dall'AI? Quali indizi vi hanno aiutato, se ce n'erano?"
+        },
+        {
+          "tipo": "quiz",
+          "testo": "Ricevi un audio del tuo direttore che chiede un bonifico urgente. Cosa fai?",
+          "opzioni": [
+            "Faccio il bonifico: è proprio la sua voce",
+            "Verifico con il direttore attraverso un altro canale",
+            "Lo inoltro ai colleghi per sentire cosa ne pensano",
+            "Uso un rilevatore online e mi fido del risultato"
+          ],
+          "corretta": 1,
+          "spiegazione": "Le voci si possono clonare con pochi secondi di audio. Davanti a richieste urgenti si verifica sempre con un canale indipendente, per esempio una telefonata. I rilevatori non sono affidabili."
+        },
+        {
+          "tipo": "turbo"
+        }
+      ]
+    },
+    {
+      "nome": "Sprint: il fact-checker",
+      "doppi": true,
+      "round": [
+        {
+          "tipo": "sincronia",
+          "testo": "Senza parlarvi! Quando un'AI vi dà un dato sospetto, la prima cosa che fate è…",
+          "opzioni": [
+            "Cerco la fonte originale",
+            "Confronto più fonti",
+            "Chiedo a un esperto",
+            "Rifaccio la domanda all'AI"
+          ],
+          "spunto": "Rifare la domanda all'AI basta? Discutete quali verifiche sono davvero indipendenti."
+        },
+        {
+          "tipo": "stima",
+          "testo": "Quanti elementi di competenza sono stati estratti dalle 6 fonti, prima dell'armonizzazione AIM-PRO?",
+          "unita": "elementi",
+          "valore": 130,
+          "min": 20,
+          "max": 300,
+          "spiegazione": "Dai 6 framework di partenza sono stati estratti circa 130 elementi; dopo fusioni e integrazioni il catalogo AIM-PRO conta 104 competenze."
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "sequenza",
+          "nome": "Finestra di contesto",
+          "come": "Guarda la sequenza di colori e ripetila: ogni livello è più lungo. Conta il livello più alto raggiunto.",
+          "durata": 40
+        }
+      ]
+    }
+  ]
+}

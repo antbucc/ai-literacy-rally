@@ -1,0 +1,143 @@
+{
+  "titolo": "Dentro un LLM",
+  "tema": "Come funzionano i grandi modelli linguistici: token, previsione della parola successiva, addestramento, allucinazioni, limiti e punti di forza.",
+  "generato": {
+    "modello": "qwen2.5:14b",
+    "data": "2026-11-04",
+    "rivisto": true
+  },
+  "tappe": [
+    {
+      "nome": "Token e previsioni",
+      "doppi": false,
+      "round": [
+        {
+          "tipo": "quiz",
+          "testo": "Quando un modello linguistico scrive una risposta, cosa fa in sostanza?",
+          "opzioni": [
+            "Scrive tutte le parole contemporaneamente",
+            "Prevede un token alla volta, in base a quello che viene prima",
+            "Copia frasi intere da testi già visti",
+            "Cerca la risposta in un archivio di risposte"
+          ],
+          "corretta": 1,
+          "spiegazione": "Un LLM genera il testo un pezzo (token) alla volta, scegliendo il seguito più probabile dato il contesto. Per questo può essere fluente anche quando sbaglia."
+        },
+        {
+          "tipo": "vero_falso",
+          "affermazioni": [
+            {
+              "testo": "I token sono sempre parole intere.",
+              "vero": false
+            },
+            {
+              "testo": "Un token può essere una parte di parola, un segno o uno spazio.",
+              "vero": true
+            },
+            {
+              "testo": "Un LLM ricorda alla lettera ogni documento su cui è stato addestrato.",
+              "vero": false
+            },
+            {
+              "testo": "Il modello sceglie il seguito più probabile in base al contesto.",
+              "vero": true
+            },
+            {
+              "testo": "Se la risposta è scritta bene, allora è anche corretta.",
+              "vero": false
+            },
+            {
+              "testo": "La stessa domanda può dare risposte diverse in momenti diversi.",
+              "vero": true
+            }
+          ],
+          "spiegazione": "I token sono pezzi di testo, non sempre parole. Il modello genera il seguito più probabile, con una componente di casualità: per questo le risposte possono variare, e la fluidità non garantisce la correttezza."
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "tap",
+          "nome": "Addestramento lampo",
+          "come": "Tocca il pulsante più veloce che puoi: ogni tocco è un ciclo di addestramento. Conta la media della squadra.",
+          "durata": 15
+        }
+      ]
+    },
+    {
+      "nome": "Allucinazioni",
+      "doppi": false,
+      "round": [
+        {
+          "tipo": "sala",
+          "testo": "Quale tipo di allucinazione generata da un LLM vi ha più colpito o spiazzato?",
+          "opzioni": [
+            "Fonti o citazioni inventate",
+            "Numeri e date sbagliati",
+            "Risposte sicure ma fuori tema",
+            "Non ne ho ancora notate"
+          ],
+          "spunto": "Raccontate un'allucinazione che vi ha colpito: come ve ne siete accorti?"
+        },
+        {
+          "tipo": "ordina",
+          "testo": "Metti in ordine cosa succede quando fai una domanda a un chatbot",
+          "elementi": [
+            "Scrivi il prompt",
+            "Il testo viene diviso in token",
+            "Il modello calcola il token più probabile",
+            "Il token si aggiunge alla risposta e il ciclo si ripete",
+            "Leggi la risposta e la verifichi"
+          ],
+          "spiegazione": "Il prompt viene trasformato in token; il modello prevede un token alla volta finché la risposta è completa. L'ultimo passo spetta a te: verificare."
+        },
+        {
+          "tipo": "sincronia",
+          "testo": "Senza parlarvi! Secondo voi, quale aspetto delle allucinazioni di un LLM è più preoccupante per l'utente finale?",
+          "opzioni": [
+            "Affidabilità",
+            "Sicurezza",
+            "Fiducia",
+            "Trasparenza"
+          ],
+          "spunto": "Perché proprio quella parola? Che cosa fate, in pratica, per proteggervi dalle allucinazioni?"
+        },
+        {
+          "tipo": "turbo"
+        }
+      ]
+    },
+    {
+      "nome": "Sprint: limiti e forze",
+      "doppi": true,
+      "round": [
+        {
+          "tipo": "stima",
+          "testo": "Quante persone hanno partecipato al workshop di co-design a L'Aquila del progetto AIM-PRO?",
+          "unita": "persone",
+          "valore": 27,
+          "min": 5,
+          "max": 100,
+          "spiegazione": "Al workshop di co-design AIM-PRO dell'Aquila, il 10 febbraio 2026, hanno partecipato 27 persone, divise in 7 gruppi."
+        },
+        {
+          "tipo": "quiz",
+          "testo": "Perché un LLM può darti informazioni superate su fatti recenti?",
+          "opzioni": [
+            "Perché conosce solo i dati fino a fine addestramento, se non usa strumenti di ricerca",
+            "Perché è programmato per nascondere le notizie",
+            "Perché i token scadono dopo un anno",
+            "Perché consuma troppa energia"
+          ],
+          "corretta": 0,
+          "spiegazione": "Un modello impara da dati raccolti fino a una certa data. Senza ricerca web o documenti aggiornati (RAG) non sa cosa è successo dopo, ma può rispondere comunque con sicurezza."
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "riflessi",
+          "nome": "Ferma l'allucinazione",
+          "come": "Quando lo schermo diventa verde, tocca! Se tocchi prima, l'allucinazione passa. Tre tentativi: conta la velocità.",
+          "durata": 25
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "ai-literacy-rally",
+  "version": "1.0.0",
+  "description": "Rally dell'AI: gioco a squadre (proiettore + telefoni) per le pause di un corso di AI Literacy (progetto AIM-PRO)",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "genera": "node scripts/genera-sessioni.mjs",
+    "controlla": "node scripts/controlla-contenuti.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  },
+  "license": "MIT"
+}

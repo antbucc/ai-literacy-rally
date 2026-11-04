@@ -1,0 +1,142 @@
+{
+  "titolo": "Dati e privacy",
+  "tema": "Dati personali e AI: GDPR, minimizzazione dei dati, dati sanitari come categorie particolari, strumenti approvati dall'organizzazione, anonimizzazione, qualità dei dati.",
+  "generato": {
+    "modello": "qwen2.5:14b",
+    "data": "2026-11-04",
+    "rivisto": true
+  },
+  "tappe": [
+    {
+      "nome": "Che dati diamo all'AI?",
+      "doppi": false,
+      "round": [
+        {
+          "tipo": "quiz",
+          "testo": "Devi usare l'AI per un servizio che tratta dati personali. Cosa chiede il GDPR?",
+          "opzioni": [
+            "Condividere tutti i dati disponibili per garantire un servizio completo",
+            "Limitare i dati al minimo indispensabile per il servizio",
+            "Usare i dati sensibili senza limiti, se servono all'analisi",
+            "Inviare i dati a più servizi AI per confrontare le risposte"
+          ],
+          "corretta": 1,
+          "spiegazione": "Il principio di minimizzazione chiede di usare solo i dati davvero necessari per lo scopo. Meno dati condividi, meno rischi corri."
+        },
+        {
+          "tipo": "vero_falso",
+          "affermazioni": [
+            {
+              "testo": "I dati sanitari si possono incollare in qualsiasi chatbot, basta togliere il nome.",
+              "vero": false
+            },
+            {
+              "testo": "La qualità dei dati è cruciale per l'AI.",
+              "vero": true
+            },
+            {
+              "testo": "Tutti i dati personali sono trattati allo stesso modo.",
+              "vero": false
+            },
+            {
+              "testo": "L'anonimizzazione è sempre perfetta.",
+              "vero": false
+            },
+            {
+              "testo": "Prima di usare un tool AI al lavoro conviene verificare che sia approvato dall'organizzazione.",
+              "vero": true
+            },
+            {
+              "testo": "La minimizzazione dei dati è obbligatoria solo per dati sanitari.",
+              "vero": false
+            }
+          ],
+          "spiegazione": "Per il GDPR i dati sanitari sono categorie particolari, e togliere il nome non basta sempre ad anonimizzare. La minimizzazione vale per tutti i dati personali."
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "tap",
+          "nome": "Addestramento lampo",
+          "come": "Tocca il pulsante più veloce che puoi: ogni tocco è un ciclo di addestramento. Conta la media della squadra.",
+          "durata": 15
+        }
+      ]
+    },
+    {
+      "nome": "GDPR in pratica",
+      "doppi": false,
+      "round": [
+        {
+          "tipo": "sala",
+          "testo": "Secondo voi, quale aspetto del GDPR è più difficile da mettere in pratica quando si lavora con l'AI?",
+          "opzioni": [
+            "Anonimizzazione dei dati",
+            "Controllo del consenso degli utenti",
+            "Valutazione dell'impatto sulla privacy",
+            "Gestione dei dati sensibili"
+          ],
+          "spunto": "Condividete una sfida pratica che avete affrontato nel rispetto del GDPR con l'AI."
+        },
+        {
+          "tipo": "ordina",
+          "testo": "Metti in ordine: prima di usare un chatbot con un documento di lavoro",
+          "elementi": [
+            "Chiediti se servono davvero dati personali",
+            "Togli o anonimizza nomi e dati sensibili",
+            "Usa uno strumento approvato dall'organizzazione",
+            "Controlla il risultato prima di condividerlo"
+          ],
+          "spiegazione": "Prima si riducono i dati al minimo, poi si sceglie lo strumento giusto; il controllo finale resta a te."
+        },
+        {
+          "tipo": "sincronia",
+          "testo": "Senza parlarvi! Secondo voi, il punto più critico del GDPR per proteggere i dati personali in ambito AI è…",
+          "opzioni": [
+            "Consenso",
+            "Minimizzazione",
+            "Tracciamento",
+            "Anonimizzazione"
+          ],
+          "spunto": "Consenso, minimizzazione o anonimizzazione: quale vi crea più dubbi nel lavoro di tutti i giorni?"
+        },
+        {
+          "tipo": "turbo"
+        }
+      ]
+    },
+    {
+      "nome": "Sprint: dati di qualità",
+      "doppi": true,
+      "round": [
+        {
+          "tipo": "stima",
+          "testo": "Quanti minuti dura il percorso formativo di Elena, l'HR Director del caso d'uso AIM-PRO?",
+          "unita": "minuti",
+          "valore": 240,
+          "min": 30,
+          "max": 600,
+          "spiegazione": "Il percorso di Elena dura 240 minuti in 2 moduli: il suo team userà l'AI per selezionare i candidati, quindi con dati personali delicati."
+        },
+        {
+          "tipo": "quiz",
+          "testo": "Un'AI per selezionare candidati viene addestrata su dati vecchi e incompleti. Cosa è più probabile?",
+          "opzioni": [
+            "Le sue decisioni rifletteranno errori e squilibri di quei dati",
+            "Correggerà da sola i dati mancanti",
+            "Funzionerà meglio perché ha più esperienza",
+            "La qualità dei dati non conta per l'AI"
+          ],
+          "corretta": 0,
+          "spiegazione": "Dati di cattiva qualità producono decisioni di cattiva qualità. Per i sistemi ad alto rischio, come il recruiting, l'AI Act chiede proprio una buona gestione dei dati."
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "riflessi",
+          "nome": "Ferma l'allucinazione",
+          "come": "Quando lo schermo diventa verde, tocca! Se tocchi prima, l'allucinazione passa. Tre tentativi: conta la velocità.",
+          "durata": 25
+        }
+      ]
+    }
+  ]
+}

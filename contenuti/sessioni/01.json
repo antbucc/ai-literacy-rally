@@ -1,0 +1,233 @@
+{
+  "titolo": "Rally introduttivo",
+  "tema": "Primo contatto: come funziona un chatbot, allucinazioni e bias, dati e regole, usare bene l'AI.",
+  "generato": {
+    "modello": "scritto a mano",
+    "rivisto": true
+  },
+  "tappe": [
+    {
+      "nome": "Come \"pensa\" un chatbot",
+      "sotto": "Partenza: cosa c'è davvero dentro l'AI generativa",
+      "round": [
+        {
+          "tipo": "quiz",
+          "testo": "Quando un chatbot come ChatGPT risponde, cosa sta facendo in sostanza?",
+          "opzioni": [
+            "Cerca la risposta in un grande archivio di frasi già scritte",
+            "Genera il testo un pezzo alla volta, prevedendo il seguito più probabile",
+            "Ragiona come una persona e poi traduce il pensiero in parole",
+            "Copia la risposta dal primo risultato di un motore di ricerca"
+          ],
+          "corretta": 1,
+          "spiegazione": "I modelli linguistici (LLM) sono addestrati su enormi quantità di testo a prevedere il pezzo di parola (token) successivo. Il risultato è fluente e spesso utile, ma fluente non vuol dire vero: il modello non consulta un'enciclopedia."
+        },
+        {
+          "tipo": "umano_ai",
+          "testo": "Due recensioni di un ristorante. Quale è stata scritta da un'AI?",
+          "brani": [
+            {
+              "etichetta": "A",
+              "testo": "Siamo capitati qui per caso dopo una giornata di riunioni. Il risotto era un filo troppo salato, ma il cameriere si è scusato e ci ha offerto un calice di vino. Torneremo, magari con meno fretta."
+            },
+            {
+              "etichetta": "B",
+              "testo": "Un'esperienza culinaria indimenticabile! Ogni piatto è un viaggio tra tradizione e innovazione, servito con cura e passione da uno staff attento e cordiale. Consigliatissimo per chi cerca autenticità."
+            }
+          ],
+          "opzioni": [
+            "A",
+            "B",
+            "Entrambe",
+            "Nessuna delle due"
+          ],
+          "corretta": 2,
+          "spiegazione": "Colpo di scena: le ha scritte entrambe un'AI. La B \"suona\" artificiale, ma la A, con dettagli concreti e un piccolo difetto, è generata allo stesso modo. Riconoscere un testo AI a occhio è molto difficile."
+        },
+        {
+          "tipo": "sala",
+          "testo": "Per cosa la maggior parte dei presenti usa GIÀ l'AI generativa al lavoro?",
+          "opzioni": [
+            "Scrivere o correggere testi ed email",
+            "Cercare informazioni",
+            "Riassumere documenti",
+            "Non la uso (ancora)"
+          ],
+          "spunto": "Chi ha indovinato? Raccontateci un uso che vi ha fatto davvero risparmiare tempo e uno che invece è andato storto."
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "tap",
+          "nome": "Addestramento lampo",
+          "come": "Tocca il pulsante più veloce che puoi: ogni tocco è un ciclo di addestramento. Conta la media della squadra.",
+          "durata": 15
+        }
+      ]
+    },
+    {
+      "nome": "Allucinazioni e bias",
+      "sotto": "Quando l'AI sbaglia, e lo fa con sicurezza",
+      "round": [
+        {
+          "tipo": "quiz",
+          "testo": "Chiedi a un chatbot tre sentenze a sostegno della tua tesi. Ti risponde con numeri, date e tribunali precisi. Cosa fai?",
+          "opzioni": [
+            "Le uso: sono troppo dettagliate per essere inventate",
+            "Le verifico una per una su una fonte ufficiale prima di usarle",
+            "Chiedo al chatbot se è sicuro: se dice di sì, le uso",
+            "Le uso, ma aggiungo \"fonte: AI\""
+          ],
+          "corretta": 1,
+          "spiegazione": "Le \"allucinazioni\" sono risposte false ma plausibili. Nel 2023, a New York, alcuni avvocati sono stati sanzionati per aver citato in tribunale sentenze inventate da ChatGPT. Chiedere \"sei sicuro?\" non basta: il modello può confermare con la stessa sicurezza."
+        },
+        {
+          "tipo": "quiz",
+          "testo": "Un'azienda addestra un'AI a selezionare CV usando le assunzioni degli ultimi 10 anni, quasi tutte di uomini. Cosa è più probabile?",
+          "opzioni": [
+            "L'AI sarà neutrale: i computer non hanno pregiudizi",
+            "L'AI tenderà a riprodurre lo squilibrio del passato",
+            "L'AI correggerà automaticamente lo squilibrio",
+            "Dipende solo dalla potenza del computer"
+          ],
+          "corretta": 1,
+          "spiegazione": "Un modello impara dai dati: se i dati riflettono discriminazioni passate, le replica e può amplificarle. È successo davvero: Amazon ha abbandonato un suo sistema sperimentale di selezione dei CV perché penalizzava le candidature femminili."
+        },
+        {
+          "tipo": "sincronia",
+          "testo": "Senza parlarvi! In una parola, per il vostro lavoro l'AI generativa è soprattutto…",
+          "opzioni": [
+            "Un'assistente",
+            "Un rischio",
+            "Un'opportunità",
+            "Una moda"
+          ],
+          "spunto": "Le squadre in sintonia ci dicono perché. Le altre: chi ha scelto diversamente e perché?"
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "riflessi",
+          "nome": "Ferma l'allucinazione",
+          "come": "Quando lo schermo diventa verde, tocca! Se tocchi prima, l'allucinazione passa. Tre tentativi: conta la velocità.",
+          "durata": 25
+        },
+        {
+          "tipo": "turbo"
+        }
+      ]
+    },
+    {
+      "nome": "Dati, privacy e regole",
+      "sotto": "Cosa possiamo (e non possiamo) dare all'AI",
+      "round": [
+        {
+          "tipo": "quiz",
+          "testo": "Devi riassumere in fretta un verbale che contiene dati sanitari di alcuni colleghi. Qual è la scelta corretta?",
+          "opzioni": [
+            "Lo incollo in un chatbot gratuito: tanto è solo un riassunto",
+            "Uso solo strumenti approvati dalla mia organizzazione e tolgo o anonimizzo i dati personali",
+            "Lo incollo, ma chiedo al chatbot di non ricordarlo",
+            "Lo traduco in inglese prima di incollarlo"
+          ],
+          "corretta": 1,
+          "spiegazione": "Con molti servizi gratuiti i testi inseriti possono essere conservati e usati per migliorare i modelli. I dati sanitari sono \"categorie particolari\" per il GDPR: servono strumenti autorizzati e minimizzazione dei dati. Chiedere al chatbot di \"dimenticare\" non cambia le regole del servizio."
+        },
+        {
+          "tipo": "quiz",
+          "testo": "Secondo l'AI Act europeo, un sistema di AI usato per selezionare i candidati a un posto di lavoro è…",
+          "opzioni": [
+            "A rischio minimo, senza obblighi",
+            "Ad alto rischio, con obblighi stringenti",
+            "Vietato in tutta l'UE",
+            "Fuori dall'ambito dell'AI Act"
+          ],
+          "corretta": 1,
+          "spiegazione": "L'AI Act classifica i sistemi per livello di rischio. Selezione e gestione del personale sono ad alto rischio (Allegato III): servono gestione del rischio, dati di qualità, supervisione umana e trasparenza. Sono invece vietati, per esempio, il \"social scoring\" e il riconoscimento delle emozioni sul luogo di lavoro."
+        },
+        {
+          "tipo": "quiz",
+          "testo": "Dal 2 febbraio 2025, cosa chiede l'AI Act alle organizzazioni che usano sistemi di AI?",
+          "opzioni": [
+            "Di nominare un \"AI officer\" certificato",
+            "Di garantire un livello sufficiente di alfabetizzazione all'AI del personale",
+            "Di chiedere un'autorizzazione per ogni chatbot usato",
+            "Nulla: gli obblighi partono nel 2030"
+          ],
+          "corretta": 1,
+          "spiegazione": "È l'articolo 4 dell'AI Act, sull'AI literacy: fornitori e utilizzatori devono adottare misure perché chi usa l'AI per loro conto abbia competenze adeguate al contesto. Questo corso serve anche a questo!"
+        },
+        {
+          "tipo": "sala",
+          "testo": "Quale frase rappresenta la maggioranza della sala?",
+          "opzioni": [
+            "L'AI ha già cambiato il mio lavoro",
+            "Lo cambierà molto entro 3 anni",
+            "Lo cambierà solo un po'",
+            "Non lo cambierà quasi per niente"
+          ],
+          "spunto": "Che cosa vi aspettate che cambi davvero? Quali competenze diventano più importanti, e quali meno?"
+        }
+      ]
+    },
+    {
+      "nome": "Sprint finale: usarla bene",
+      "sotto": "Prompt, verifiche e responsabilità",
+      "doppi": true,
+      "round": [
+        {
+          "tipo": "quiz",
+          "testo": "Quale richiesta otterrà più probabilmente una risposta utile?",
+          "opzioni": [
+            "Scrivi una mail",
+            "Scrivi una mail BELLA e PROFESSIONALE!!!",
+            "Sei un responsabile HR. Scrivi una mail di 120 parole ai nuovi assunti: onboarding lunedì alle 9, tono cordiale, elenco di cosa portare",
+            "Fai tu, sei l'esperto"
+          ],
+          "corretta": 2,
+          "spiegazione": "Un buon prompt indica ruolo, obiettivo, contesto, vincoli (lunghezza, tono, formato) e i dati necessari. Maiuscole e punti esclamativi non aggiungono informazioni. E poi: rileggi e correggi sempre il risultato."
+        },
+        {
+          "tipo": "quiz",
+          "testo": "Un \"AI detector\" online dice che il testo di un collega è \"generato da AI al 98%\". Quanto ti fidi?",
+          "opzioni": [
+            "Totalmente: 98% è un dato preciso",
+            "Poco: questi strumenti sbagliano spesso, in entrambe le direzioni",
+            "Mi fido se il detector è a pagamento",
+            "Mi fido solo se il testo è in inglese"
+          ],
+          "corretta": 1,
+          "spiegazione": "I rilevatori di testo AI sono inaffidabili: OpenAI ha ritirato il proprio classificatore nel 2023 per la bassa accuratezza, e alcuni studi mostrano che segnalano a torto i testi di chi non scrive nella propria lingua madre. Non usarli come prova per decisioni sulle persone."
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "sequenza",
+          "nome": "Finestra di contesto",
+          "come": "Guarda la sequenza di colori e ripetila: ogni livello è più lungo. Conta il livello più alto raggiunto.",
+          "durata": 40
+        },
+        {
+          "tipo": "quiz",
+          "testo": "Hai preparato con l'aiuto dell'AI un documento e l'hai inviato a un cliente. C'è un errore grave. Chi ne risponde?",
+          "opzioni": [
+            "L'azienda che fornisce il chatbot",
+            "L'AI stessa",
+            "Tu e la tua organizzazione",
+            "Nessuno, se c'è scritto \"generato con AI\""
+          ],
+          "corretta": 2,
+          "spiegazione": "L'AI è uno strumento: la responsabilità del contenuto resta di chi lo usa e lo firma. Regola pratica, \"human in the loop\": controlla fatti, numeri, tono e dati riservati prima di inviare."
+        },
+        {
+          "tipo": "sincronia",
+          "testo": "Senza parlarvi! La regola d'oro che vi portate a casa è…",
+          "opzioni": [
+            "Verifica sempre",
+            "Proteggi i dati",
+            "Scrivi prompt chiari",
+            "Resta tu il responsabile"
+          ],
+          "spunto": "Quattro regole, tutte giuste. Quale applicherete già da domani?"
+        }
+      ]
+    }
+  ]
+}

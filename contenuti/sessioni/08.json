@@ -1,0 +1,142 @@
+{
+  "titolo": "Green AI: misurare l'impronta",
+  "tema": "Impronta energetica e di carbonio dell'AI: wattora, CO2 equivalente, intensità carbonica della rete, addestramento vs inferenza, strumenti di misura (CodeCarbon, RAPL, powermetrics), PUE dei data center.",
+  "generato": {
+    "modello": "qwen2.5:14b",
+    "data": "2026-11-04",
+    "rivisto": true
+  },
+  "tappe": [
+    {
+      "nome": "Energia e carbonio",
+      "doppi": false,
+      "round": [
+        {
+          "tipo": "quiz",
+          "testo": "Per calcolare la CO2 di un calcolo AI, l'energia consumata va moltiplicata per…",
+          "opzioni": [
+            "L'intensità carbonica della rete elettrica (gCO2/kWh)",
+            "Il numero di parametri del modello",
+            "La velocità della connessione internet",
+            "Il prezzo dell'elettricità"
+          ],
+          "corretta": 0,
+          "spiegazione": "Emissioni = energia × intensità carbonica della rete, che cambia per paese e ora del giorno. La stessa energia inquina meno su una rete rinnovabile."
+        },
+        {
+          "tipo": "vero_falso",
+          "affermazioni": [
+            {
+              "testo": "La PUE di 1,0 indica un data center perfettamente efficiente.",
+              "vero": true
+            },
+            {
+              "testo": "Il consumo energetico dell'addestramento di un modello AI è sempre maggiore di quello dell'inferenza.",
+              "vero": false
+            },
+            {
+              "testo": "Il consumo energetico di un modello AI dipende solo dal suo addestramento.",
+              "vero": false
+            },
+            {
+              "testo": "L'intensità carbonica della rete elettrica è la stessa ovunque nel mondo.",
+              "vero": false
+            },
+            {
+              "testo": "CodeCarbon stima sia l'energia consumata sia le emissioni di CO2.",
+              "vero": true
+            },
+            {
+              "testo": "Per un compito semplice, un modello più piccolo di solito consuma meno energia.",
+              "vero": true
+            }
+          ],
+          "spiegazione": "PUE 1,0 è l'ideale teorico. L'inferenza, ripetuta milioni di volte, può superare l'addestramento; e la CO2 dipende dalla rete elettrica locale."
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "tap",
+          "nome": "Addestramento lampo",
+          "come": "Tocca il pulsante più veloce che puoi: ogni tocco è un ciclo di addestramento. Conta la media della squadra.",
+          "durata": 15
+        }
+      ]
+    },
+    {
+      "nome": "Come si misura",
+      "doppi": false,
+      "round": [
+        {
+          "tipo": "sala",
+          "testo": "Secondo la sala, chi dovrebbe occuparsi dell'impronta ambientale dell'AI in un'organizzazione?",
+          "opzioni": [
+            "Il reparto IT",
+            "Chi sceglie e acquista i servizi AI",
+            "Ogni persona che usa l'AI",
+            "Il responsabile della sostenibilità"
+          ],
+          "spunto": "Nella vostra organizzazione qualcuno misura i consumi dei servizi digitali? Che cosa potreste chiedere ai fornitori?"
+        },
+        {
+          "tipo": "ordina",
+          "testo": "Metti in ordine i passaggi per calcolare la CO2 di un calcolo AI",
+          "elementi": [
+            "Scegli lo strumento di misura (es. CodeCarbon)",
+            "Misura l'energia consumata (Wh)",
+            "Trova l'intensità carbonica della rete in quel luogo e momento",
+            "Moltiplica energia × intensità per ottenere la CO2"
+          ],
+          "spiegazione": "Prima si misura l'energia, poi la si converte in CO2 con l'intensità carbonica locale. Strumenti diversi possono dare valori un po' diversi: conta sapere come è stato misurato."
+        },
+        {
+          "tipo": "sincronia",
+          "testo": "Senza parlarvi! La scelta che riduce di più l'impronta dell'AI nel vostro lavoro è…",
+          "opzioni": [
+            "Usare modelli più piccoli",
+            "Fare meno richieste inutili",
+            "Data center rinnovabili",
+            "Misurare i consumi"
+          ],
+          "spunto": "Quale di queste scelte è davvero nelle vostre mani? E quale dipende da altri?"
+        },
+        {
+          "tipo": "turbo"
+        }
+      ]
+    },
+    {
+      "nome": "Sprint: il data center",
+      "doppi": true,
+      "round": [
+        {
+          "tipo": "stima",
+          "testo": "Quante competenze della categoria Green contiene il catalogo AIM-PRO?",
+          "unita": "competenze",
+          "valore": 25,
+          "min": 0,
+          "max": 60,
+          "spiegazione": "Il catalogo AIM-PRO ha 104 competenze: 26 Digital, 25 Green, 27 Resilience & Entrepreneurial e 26 Deep Tech. Le Green riguardano impatto ambientale ed efficienza dell'AI."
+        },
+        {
+          "tipo": "quiz",
+          "testo": "Quale dei seguenti valori indica un data center efficiente, ma non perfetto?",
+          "opzioni": [
+            "PUE 0,9",
+            "PUE 1,2",
+            "PUE 1,0",
+            "PUE 1,5"
+          ],
+          "corretta": 1,
+          "spiegazione": "Il PUE è energia totale del data center diviso energia dei server: non può scendere sotto 1,0, che è l'ideale. 1,2 è un buon valore; 1,5 indica più sprechi."
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "riflessi",
+          "nome": "Ferma l'allucinazione",
+          "come": "Quando lo schermo diventa verde, tocca! Se tocchi prima, l'allucinazione passa. Tre tentativi: conta la velocità.",
+          "durata": 25
+        }
+      ]
+    }
+  ]
+}

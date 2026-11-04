@@ -1,0 +1,168 @@
+{
+  "titolo": "Gran finale AIM-PRO",
+  "tema": "Il progetto AIM-PRO: le 104 competenze nelle 4 categorie (Digital, Green, Resilience & Entrepreneurial, Deep Tech), livelli Foundation/Intermediate/Advanced, KSA, cluster e certificazione, i quattro temi dei bisogni (potenziamento, trasparenza, tempo, riconoscimento), il workshop dell'Aquila, i destinatari HE, VET e PMI.",
+  "generato": {
+    "modello": "qwen2.5:14b",
+    "data": "2026-11-04",
+    "rivisto": true
+  },
+  "tappe": [
+    {
+      "nome": "Le 4 famiglie di competenze",
+      "doppi": false,
+      "round": [
+        {
+          "tipo": "quiz",
+          "testo": "Quale delle seguenti categorie di competenze di AIM-PRO include competenze su efficienza delle risorse e impatto ambientale dell'AI?",
+          "opzioni": [
+            "Digital",
+            "Green",
+            "Resilience & Entrepreneurial",
+            "Deep Tech"
+          ],
+          "corretta": 1,
+          "spiegazione": "La categoria Green contiene competenze specifiche sull'efficienza delle risorse e l'impatto ambientale dell'AI."
+        },
+        {
+          "tipo": "smista",
+          "testo": "Smista queste competenze nelle quattro categorie AIM-PRO",
+          "categorie": [
+            "Digital",
+            "Green",
+            "Resilience & Entrepreneurial",
+            "Deep Tech"
+          ],
+          "elementi": [
+            {
+              "testo": "Consapevolezza delle norme sull'AI",
+              "categoria": 0
+            },
+            {
+              "testo": "Efficienza energetica dell'AI",
+              "categoria": 1
+            },
+            {
+              "testo": "Collaborare con l'AI in azienda",
+              "categoria": 2
+            },
+            {
+              "testo": "Machine learning e reti neurali",
+              "categoria": 3
+            },
+            {
+              "testo": "Valutare criticamente gli output dell'AI",
+              "categoria": 0
+            },
+            {
+              "testo": "Adattarsi ai cambiamenti del lavoro",
+              "categoria": 2
+            }
+          ],
+          "spiegazione": "Digital: uso, valutazione e regole; Green: impatto ambientale ed efficienza; Resilience & Entrepreneurial: adattamento, collaborazione, innovazione; Deep Tech: machine learning, ingegneria, MLOps."
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "sequenza",
+          "nome": "Finestra di contesto",
+          "come": "Guarda la sequenza di colori e ripetila: ogni livello è più lungo. Conta il livello più alto raggiunto.",
+          "durata": 40
+        }
+      ]
+    },
+    {
+      "nome": "Dal bisogno al framework",
+      "doppi": false,
+      "round": [
+        {
+          "tipo": "sincronia",
+          "testo": "Senza parlarvi! La categoria di competenze di AIM-PRO che vi appare più rilevante per il vostro ruolo attuale è…",
+          "opzioni": [
+            "Digital",
+            "Green",
+            "Resilience",
+            "Deep Tech"
+          ],
+          "spunto": "Discutete perché avete scelto quella specifica categoria e come potrebbe migliorare le vostre competenze."
+        },
+        {
+          "tipo": "quiz",
+          "testo": "Quale delle seguenti è un tema trasversale emerso dal workshop dell'Aquila che riguarda direttamente la fiducia nell'AI?",
+          "opzioni": [
+            "Potenziamento, non sostituzione",
+            "Trasparenza",
+            "Tempo",
+            "Riconoscimento"
+          ],
+          "corretta": 1,
+          "spiegazione": "Trasparenza riguarda la necessità che gli output dell'AI abbiano spiegazioni e indicatori di qualità, diretta fonte di fiducia."
+        },
+        {
+          "tipo": "vero_falso",
+          "affermazioni": [
+            {
+              "testo": "AIM-PRO non prevede competenze di livello avanzato.",
+              "vero": false
+            },
+            {
+              "testo": "Al workshop di co-design dell'Aquila hanno lavorato 7 gruppi.",
+              "vero": true
+            },
+            {
+              "testo": "Il catalogo AIM-PRO ha esattamente lo stesso numero di competenze in ogni categoria.",
+              "vero": false
+            },
+            {
+              "testo": "Le competenze AIM-PRO hanno tre livelli: Foundation, Intermediate e Advanced.",
+              "vero": true
+            },
+            {
+              "testo": "AIM-PRO si rivolge solo agli studenti universitari.",
+              "vero": false
+            },
+            {
+              "testo": "La consapevolezza delle norme sull'AI fa parte delle competenze Digital.",
+              "vero": true
+            }
+          ],
+          "spiegazione": "AIM-PRO si rivolge a università, formazione professionale e PMI. Le 104 competenze sono quasi bilanciate (26, 25, 27, 26) e hanno tre livelli di padronanza."
+        },
+        {
+          "tipo": "turbo"
+        }
+      ]
+    },
+    {
+      "nome": "Sprint finale",
+      "doppi": true,
+      "round": [
+        {
+          "tipo": "ordina",
+          "testo": "Metti in ordine, dal più piccolo al più grande, i livelli del modello delle competenze AIM-PRO",
+          "elementi": [
+            "Concetto (argomento)",
+            "Competenza",
+            "Cluster di competenze",
+            "Percorso o certificazione"
+          ],
+          "spiegazione": "I concetti si aggregano in competenze, le competenze in cluster (l'unità valutata e certificata), e i cluster in percorsi come un certificato di AI literacy."
+        },
+        {
+          "tipo": "stima",
+          "testo": "Gran finale: quante competenze contiene in tutto il catalogo AIM-PRO?",
+          "unita": "competenze",
+          "valore": 104,
+          "min": 20,
+          "max": 200,
+          "spiegazione": "104 competenze attive: 26 Digital, 25 Green, 27 Resilience & Entrepreneurial e 26 Deep Tech. Ora ne conoscete un bel po'!"
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "tap",
+          "nome": "Addestramento lampo",
+          "come": "Tocca il pulsante più veloce che puoi: ogni tocco è un ciclo di addestramento. Conta la media della squadra.",
+          "durata": 15
+        }
+      ]
+    }
+  ]
+}

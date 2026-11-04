@@ -1,0 +1,168 @@
+{
+  "titolo": "AI Act in pratica",
+  "tema": "Il Regolamento UE sull'AI (AI Act): livelli di rischio, pratiche vietate, sistemi ad alto rischio, obblighi di trasparenza, obbligo di AI literacy (articolo 4), date di applicazione, sanzioni.",
+  "generato": {
+    "modello": "qwen2.5:14b",
+    "data": "2026-11-04",
+    "rivisto": true
+  },
+  "tappe": [
+    {
+      "nome": "La piramide del rischio",
+      "doppi": false,
+      "round": [
+        {
+          "tipo": "quiz",
+          "testo": "Secondo l'AI Act, quale categoria di rischio riguarda le pratiche vietate come il social scoring?",
+          "opzioni": [
+            "Rischio inaccettabile",
+            "Alto rischio",
+            "Rischio limitato",
+            "Rischio minimo"
+          ],
+          "corretta": 0,
+          "spiegazione": "Il social scoring è a rischio inaccettabile: per questo è vietato dal 2 febbraio 2025. Sotto vengono alto rischio, rischio limitato (obblighi di trasparenza) e rischio minimo."
+        },
+        {
+          "tipo": "smista",
+          "testo": "Per l'AI Act, in quale categoria rientra?",
+          "categorie": [
+            "Vietato",
+            "Alto rischio",
+            "Obbligo di trasparenza",
+            "Rischio minimo"
+          ],
+          "elementi": [
+            {
+              "testo": "Riconoscimento delle emozioni dei dipendenti in ufficio",
+              "categoria": 0
+            },
+            {
+              "testo": "Software che seleziona i CV dei candidati",
+              "categoria": 1
+            },
+            {
+              "testo": "Chatbot di assistenza clienti",
+              "categoria": 2
+            },
+            {
+              "testo": "Sistema che valuta gli esami degli studenti",
+              "categoria": 1
+            },
+            {
+              "testo": "Social scoring dei cittadini",
+              "categoria": 0
+            },
+            {
+              "testo": "Filtro antispam della posta",
+              "categoria": 3
+            }
+          ],
+          "spiegazione": "Riconoscimento delle emozioni sul lavoro e social scoring sono vietati; selezione del personale e valutazione degli studenti sono ad alto rischio; un chatbot deve dichiarare di essere un'AI; un filtro antispam è a rischio minimo."
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "sequenza",
+          "nome": "Finestra di contesto",
+          "come": "Guarda la sequenza di colori e ripetila: ogni livello è più lungo. Conta il livello più alto raggiunto.",
+          "durata": 40
+        }
+      ]
+    },
+    {
+      "nome": "Cosa è vietato",
+      "doppi": false,
+      "round": [
+        {
+          "tipo": "sincronia",
+          "testo": "Senza parlarvi! L'obbligo dell'AI Act che avrà più impatto sul vostro lavoro è…",
+          "opzioni": [
+            "Formare le persone (AI literacy)",
+            "Dichiarare quando si usa un chatbot",
+            "Controlli sui sistemi ad alto rischio",
+            "Etichettare i contenuti generati"
+          ],
+          "spunto": "Chi nella vostra organizzazione si occupa di questi obblighi? E chi dovrebbe?"
+        },
+        {
+          "tipo": "quiz",
+          "testo": "Secondo l'AI Act, qual è una delle pratiche vietate in contesti lavorativi e scolastici?",
+          "opzioni": [
+            "Riconoscimento delle emozioni dei candidati durante un colloquio",
+            "Valutazione dei candidati basata su CV e referenze",
+            "Utilizzo di chatbot per rispondere alle domande frequenti",
+            "Creazione di deepfake per formazione del personale"
+          ],
+          "corretta": 0,
+          "spiegazione": "Il riconoscimento delle emozioni sul lavoro e a scuola è vietato, salvo motivi medici o di sicurezza. La selezione dei CV con l'AI è permessa ma ad alto rischio; i deepfake vanno etichettati."
+        },
+        {
+          "tipo": "vero_falso",
+          "affermazioni": [
+            {
+              "testo": "Il social scoring delle persone è una pratica vietata.",
+              "vero": true
+            },
+            {
+              "testo": "Un chatbot può fingere di essere una persona, se lo fa in modo convincente.",
+              "vero": false
+            },
+            {
+              "testo": "Un sistema di AI che valuta gli studenti è ad alto rischio.",
+              "vero": true
+            },
+            {
+              "testo": "L'AI si può usare liberamente per selezionare il personale, senza obblighi.",
+              "vero": false
+            },
+            {
+              "testo": "L'AI Act vale solo per le aziende che sviluppano AI, non per chi la usa.",
+              "vero": false
+            },
+            {
+              "testo": "L'AI Act chiede alle organizzazioni di garantire l'AI literacy del personale.",
+              "vero": true
+            }
+          ],
+          "spiegazione": "L'AI Act riguarda sia chi sviluppa sia chi usa sistemi di AI (i deployer). L'obbligo di AI literacy dell'articolo 4 vale per entrambi."
+        },
+        {
+          "tipo": "turbo"
+        }
+      ]
+    },
+    {
+      "nome": "Sprint: compliance",
+      "doppi": true,
+      "round": [
+        {
+          "tipo": "ordina",
+          "testo": "Metti in ordine cronologico le tappe dell'AI Act",
+          "elementi": [
+            "Pubblicazione nella Gazzetta ufficiale UE",
+            "Entrata in vigore del regolamento",
+            "Si applicano divieti e obbligo di AI literacy",
+            "Si applicano gli obblighi per i modelli di AI per uso generale"
+          ],
+          "spiegazione": "Pubblicato il 12 luglio 2024, in vigore dal 1° agosto 2024; divieti e AI literacy dal 2 febbraio 2025; obblighi per i modelli di uso generale (GPAI) dal 2 agosto 2025. Le altre norme si applicano gradualmente."
+        },
+        {
+          "tipo": "stima",
+          "testo": "Fino a quanti milioni di euro arrivano le sanzioni per le pratiche vietate dall'AI Act?",
+          "unita": "milioni di €",
+          "valore": 35,
+          "min": 1,
+          "max": 100,
+          "spiegazione": "Le sanzioni massime per le pratiche vietate dell'AI Act arrivano a 35 milioni di euro o al 7% del fatturato mondiale annuo."
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "tap",
+          "nome": "Addestramento lampo",
+          "come": "Tocca il pulsante più veloce che puoi: ogni tocco è un ciclo di addestramento. Conta la media della squadra.",
+          "durata": 15
+        }
+      ]
+    }
+  ]
+}

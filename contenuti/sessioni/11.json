@@ -1,0 +1,143 @@
+{
+  "titolo": "Agenti AI e lavoro che cambia",
+  "tema": "Agenti AI che usano strumenti e compiono azioni, supervisione umana, flussi di lavoro professionali con l'AI, gestione del cambiamento, resilienza e imprenditorialità (categoria Resilience & Entrepreneurial, EntreComp).",
+  "generato": {
+    "modello": "qwen2.5:14b",
+    "data": "2026-11-04",
+    "rivisto": true
+  },
+  "tappe": [
+    {
+      "nome": "Dall'assistente all'agente",
+      "doppi": false,
+      "round": [
+        {
+          "tipo": "quiz",
+          "testo": "Un agente AI può inviare email e approvare spese a nome tuo. Qual è la scelta più prudente?",
+          "opzioni": [
+            "Lasciarlo agire senza limiti",
+            "Chiedere una conferma umana prima delle azioni importanti",
+            "Non controllare mai cosa ha fatto",
+            "Dargli accesso a tutti i sistemi aziendali"
+          ],
+          "corretta": 1,
+          "spiegazione": "Un agente agisce, non si limita a rispondere. Per le azioni con conseguenze serve una persona che approvi, accessi limitati e un registro di quello che fa."
+        },
+        {
+          "tipo": "vero_falso",
+          "affermazioni": [
+            {
+              "testo": "Un agente AI non richiede supervisione umana.",
+              "vero": false
+            },
+            {
+              "testo": "La supervisione umana è fondamentale per decisioni importanti.",
+              "vero": true
+            },
+            {
+              "testo": "Gli agenti AI possono sostituire completamente gli umani.",
+              "vero": false
+            },
+            {
+              "testo": "Un agente AI ben supervisionato può far risparmiare tempo su compiti ripetitivi.",
+              "vero": true
+            },
+            {
+              "testo": "Non è necessario capire come funziona un agente AI per usarlo.",
+              "vero": false
+            },
+            {
+              "testo": "La supervisione umana preclude l'uso di agenti AI.",
+              "vero": false
+            }
+          ],
+          "spiegazione": "La supervisione umana è chiave per garantire la correttezza e la sicurezza delle azioni dell'agente AI."
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "tap",
+          "nome": "Addestramento lampo",
+          "come": "Tocca il pulsante più veloce che puoi: ogni tocco è un ciclo di addestramento. Conta la media della squadra.",
+          "durata": 15
+        }
+      ]
+    },
+    {
+      "nome": "Il team che cambia",
+      "doppi": false,
+      "round": [
+        {
+          "tipo": "sala",
+          "testo": "Secondo la sala, quale parte del lavoro resterà più a lungo nelle mani delle persone?",
+          "opzioni": [
+            "Le decisioni che riguardano persone",
+            "Le relazioni con clienti e colleghi",
+            "Creatività e strategia",
+            "Il controllo di qualità"
+          ],
+          "spunto": "Che cosa vi aspettate che cambi nel vostro ruolo nei prossimi anni? Che cosa vorreste delegare all'AI?"
+        },
+        {
+          "tipo": "ordina",
+          "testo": "Metti in ordine i passaggi per introdurre l'AI in un flusso di lavoro",
+          "elementi": [
+            "Individua un compito da migliorare",
+            "Prova l'AI su un caso piccolo (pilota)",
+            "Valuta risultati e rischi con il team",
+            "Forma le persone coinvolte",
+            "Estendi e monitora nel tempo"
+          ],
+          "spiegazione": "Si parte da un bisogno concreto, si sperimenta in piccolo, si valuta insieme e si forma il team prima di estendere. Poi si continua a monitorare."
+        },
+        {
+          "tipo": "sincronia",
+          "testo": "Senza parlarvi! Davanti all'AI che cambia il lavoro, la qualità più utile è…",
+          "opzioni": [
+            "Curiosità",
+            "Spirito critico",
+            "Saper collaborare",
+            "Imparare in fretta"
+          ],
+          "spunto": "Sono le competenze della categoria Resilience & Entrepreneurial di AIM-PRO. Quale state allenando di più?"
+        },
+        {
+          "tipo": "turbo"
+        }
+      ]
+    },
+    {
+      "nome": "Sprint: innovare con giudizio",
+      "doppi": true,
+      "round": [
+        {
+          "tipo": "stima",
+          "testo": "Quanti gruppi di lavoro si sono formati durante il workshop di co-design di AIM-PRO a L'Aquila?",
+          "unita": "gruppi",
+          "valore": 7,
+          "min": 1,
+          "max": 20,
+          "spiegazione": "Durante il workshop di co-design di AIM-PRO, 27 partecipanti si sono divisi in 7 gruppi."
+        },
+        {
+          "tipo": "quiz",
+          "testo": "Un agente AI propone di automatizzare un flusso di lavoro esistente. Come valuti la proposta prima di approvarla?",
+          "opzioni": [
+            "La approvo subito per aumentare l'efficienza",
+            "La rifiuto perché il cambiamento è sempre rischioso",
+            "La analizzo per capire i rischi e benefici",
+            "La consulto con il team senza valutare"
+          ],
+          "corretta": 2,
+          "spiegazione": "Valutare i rischi e benefici è essenziale prima di approvare cambiamenti radicali."
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "riflessi",
+          "nome": "Ferma l'allucinazione",
+          "come": "Quando lo schermo diventa verde, tocca! Se tocchi prima, l'allucinazione passa. Tre tentativi: conta la velocità.",
+          "durata": 25
+        }
+      ]
+    }
+  ]
+}

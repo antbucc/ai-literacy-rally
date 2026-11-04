@@ -1,0 +1,16 @@
+{
+  "titolo": "Rally dell'AI",
+  "sottotitolo": "Corso di AI Literacy · AIM-PRO",
+  "tempi": {
+    "quiz": 30,
+    "umano_ai": 45,
+    "sala": 25,
+    "sincronia": 25,
+    "vero_falso": 45,
+    "ordina": 40,
+    "stima": 30,
+    "smista": 40,
+    "trovarsi": 90,
+    "pronti": 5
+  }
+}

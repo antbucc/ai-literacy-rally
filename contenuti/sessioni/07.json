@@ -1,0 +1,166 @@
+{
+  "titolo": "Bias, etica e controllo umano",
+  "tema": "Bias nei dati e nei modelli, equità, responsabilità, supervisione umana (human in the loop), potenziamento e non sostituzione delle persone, caso Elena HR Director e screening dei candidati.",
+  "generato": {
+    "modello": "qwen2.5:14b",
+    "data": "2026-11-04",
+    "rivisto": true
+  },
+  "tappe": [
+    {
+      "nome": "Da dove nasce il bias",
+      "doppi": false,
+      "round": [
+        {
+          "tipo": "vero_falso",
+          "affermazioni": [
+            {
+              "testo": "Il bias nei dati non influenza il modello addestrato.",
+              "vero": false
+            },
+            {
+              "testo": "Il bias nei dati può riprodurre discriminazioni esistenti.",
+              "vero": true
+            },
+            {
+              "testo": "I modelli AI sono sempre obiettivi e imparziali.",
+              "vero": false
+            },
+            {
+              "testo": "La supervisione umana aiuta a individuare e correggere il bias.",
+              "vero": true
+            },
+            {
+              "testo": "Il bias nei modelli nasce solo da errori tecnici.",
+              "vero": false
+            },
+            {
+              "testo": "Il bias nei modelli può esistere anche se i dati sembrano equi.",
+              "vero": true
+            }
+          ],
+          "spiegazione": "Il bias nei dati e nei modelli può replicare discriminazioni, richiede supervisione umana per essere corretto."
+        },
+        {
+          "tipo": "quiz",
+          "testo": "Un modello per i prestiti impara da decisioni passate che penalizzavano alcuni quartieri. Cosa succede?",
+          "opzioni": [
+            "Tenderà a penalizzare quei quartieri",
+            "Sarà neutrale perché è matematica",
+            "Correggerà l'ingiustizia da solo",
+            "Rifiuterà di decidere"
+          ],
+          "corretta": 0,
+          "spiegazione": "Il modello impara gli squilibri dei dati, anche attraverso variabili indirette come il quartiere. Il credito è un ambito ad alto rischio per l'AI Act."
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "riflessi",
+          "nome": "Ferma l'allucinazione",
+          "come": "Quando lo schermo diventa verde, tocca! Se tocchi prima, l'allucinazione passa. Tre tentativi: conta la velocità.",
+          "durata": 25
+        }
+      ]
+    },
+    {
+      "nome": "Il caso Elena",
+      "doppi": false,
+      "round": [
+        {
+          "tipo": "smista",
+          "testo": "Nel caso Elena (screening dei candidati): chi decide davvero?",
+          "categorie": [
+            "L'umano resta al comando",
+            "L'AI decide da sola"
+          ],
+          "elementi": [
+            {
+              "testo": "Elena rivede i candidati scartati dall'AI",
+              "categoria": 0
+            },
+            {
+              "testo": "Il sistema invia i rifiuti ai candidati senza controllo",
+              "categoria": 1
+            },
+            {
+              "testo": "Il team può contestare e correggere la classifica",
+              "categoria": 0
+            },
+            {
+              "testo": "La graduatoria dell'AI diventa la decisione finale",
+              "categoria": 1
+            },
+            {
+              "testo": "Si controlla periodicamente se il sistema penalizza alcuni gruppi",
+              "categoria": 0
+            },
+            {
+              "testo": "Nessuno sa spiegare perché un candidato è stato escluso",
+              "categoria": 1
+            }
+          ],
+          "spiegazione": "Supervisione umana significa poter controllare, capire e correggere le decisioni dell'AI. L'AI potenzia le persone, non le sostituisce."
+        },
+        {
+          "tipo": "sala",
+          "testo": "Quale aspetto del caso Elena è più preoccupante per voi nella gestione del team di screening dei candidati?",
+          "opzioni": [
+            "Fiducia nell'AI",
+            "Supervisione umana",
+            "Potenziamento delle persone",
+            "Bias nei dati e modelli"
+          ],
+          "spunto": "Parlatene con un vicino e confrontate le vostre preoccupazioni."
+        },
+        {
+          "tipo": "quiz",
+          "testo": "Il team di Elena userà l'AI per lo screening dei candidati. Cosa dovrebbe prevedere?",
+          "opzioni": [
+            "Usare l'AI senza controllo umano",
+            "Che una persona controlli e possa correggere le decisioni dell'AI",
+            "Che le risposte dell'AI vengano ignorate",
+            "Rifiutare l'uso dell'AI"
+          ],
+          "corretta": 1,
+          "spiegazione": "La selezione del personale è ad alto rischio: serve una supervisione umana reale, cioè qualcuno che capisca, controlli e possa correggere i risultati."
+        },
+        {
+          "tipo": "turbo"
+        }
+      ]
+    },
+    {
+      "nome": "Sprint: l'umano decide",
+      "doppi": true,
+      "round": [
+        {
+          "tipo": "sincronia",
+          "testo": "Senza parlarvi! Per uno screening dei candidati equo, la cosa più importante è…",
+          "opzioni": [
+            "Supervisione umana",
+            "Trasparenza",
+            "Dati senza bias",
+            "Formazione del team"
+          ],
+          "spunto": "Come le vostre scelte riflettono le sfide e gli obiettivi del caso?"
+        },
+        {
+          "tipo": "stima",
+          "testo": "Quante User Persona sono state create nel workshop di co-design AIM-PRO?",
+          "unita": "personas",
+          "valore": 8,
+          "min": 1,
+          "max": 30,
+          "spiegazione": "Le 8 User Persona coprono università (studenti, dottorando, docente), PMI (HR Director e HR Manager) e formazione professionale (formatore e docente VET)."
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "sequenza",
+          "nome": "Finestra di contesto",
+          "come": "Guarda la sequenza di colori e ripetila: ogni livello è più lungo. Conta il livello più alto raggiunto.",
+          "durata": 40
+        }
+      ]
+    }
+  ]
+}

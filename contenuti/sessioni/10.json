@@ -1,0 +1,167 @@
+{
+  "titolo": "Machine learning senza paura",
+  "tema": "Concetti Deep Tech: apprendimento supervisionato, non supervisionato e per rinforzo, dati di addestramento e di test, overfitting, reti neurali, ciclo di vita del machine learning e MLOps.",
+  "generato": {
+    "modello": "qwen2.5:14b",
+    "data": "2026-11-04",
+    "rivisto": true
+  },
+  "tappe": [
+    {
+      "nome": "Come impara una macchina",
+      "doppi": false,
+      "round": [
+        {
+          "tipo": "vero_falso",
+          "affermazioni": [
+            {
+              "testo": "Ogni tipo di machine learning richiede dati etichettati.",
+              "vero": false
+            },
+            {
+              "testo": "L'overfitting si verifica quando il modello impara a memoria i dati di addestramento.",
+              "vero": true
+            },
+            {
+              "testo": "Il ciclo di vita del machine learning non include la fase di monitoraggio.",
+              "vero": false
+            },
+            {
+              "testo": "Il machine learning per rinforzo utilizza premi e penalità per apprendere.",
+              "vero": true
+            },
+            {
+              "testo": "Un modello si valuta su dati diversi da quelli usati per addestrarlo.",
+              "vero": true
+            },
+            {
+              "testo": "Le reti neurali non sono utilizzate nell'apprendimento supervisionato.",
+              "vero": false
+            }
+          ],
+          "spiegazione": "Solo l'apprendimento supervisionato usa etichette. Per capire se un modello generalizza lo si prova su dati nuovi; dopo il rilascio va monitorato."
+        },
+        {
+          "tipo": "quiz",
+          "testo": "In quale fase del ciclo di vita del machine learning si identificano i dati di addestramento e di test?",
+          "opzioni": [
+            "Definizione del problema",
+            "Preparazione dei dati",
+            "Addestramento",
+            "Valutazione"
+          ],
+          "corretta": 1,
+          "spiegazione": "Nella preparazione i dati si puliscono e si dividono in insiemi di addestramento e di test, così da poter valutare il modello su dati che non ha mai visto."
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "riflessi",
+          "nome": "Ferma l'allucinazione",
+          "come": "Quando lo schermo diventa verde, tocca! Se tocchi prima, l'allucinazione passa. Tre tentativi: conta la velocità.",
+          "durata": 25
+        }
+      ]
+    },
+    {
+      "nome": "Il ciclo di vita",
+      "doppi": false,
+      "round": [
+        {
+          "tipo": "smista",
+          "testo": "Che tipo di apprendimento è?",
+          "categorie": [
+            "Supervisionato",
+            "Non supervisionato",
+            "Per rinforzo"
+          ],
+          "elementi": [
+            {
+              "testo": "Riconoscere lo spam da email già etichettate",
+              "categoria": 0
+            },
+            {
+              "testo": "Dividere i clienti in gruppi simili, senza etichette",
+              "categoria": 1
+            },
+            {
+              "testo": "Un'AI che impara gli scacchi vincendo e perdendo",
+              "categoria": 2
+            },
+            {
+              "testo": "Prevedere il prezzo di una casa da vendite passate",
+              "categoria": 0
+            },
+            {
+              "testo": "Trovare transazioni anomale senza esempi di frode",
+              "categoria": 1
+            },
+            {
+              "testo": "Un robot che impara a camminare provando e sbagliando",
+              "categoria": 2
+            }
+          ],
+          "spiegazione": "Supervisionato: esempi con la risposta giusta. Non supervisionato: trovare strutture senza etichette. Per rinforzo: premi e penalità dopo ogni tentativo."
+        },
+        {
+          "tipo": "sala",
+          "testo": "Quale fase del ciclo di vita del machine learning ritenete più critica per il successo finale del modello?",
+          "opzioni": [
+            "Definizione del problema",
+            "Preparazione dei dati",
+            "Addestramento del modello",
+            "Monitoraggio e aggiornamento"
+          ],
+          "spunto": "Condividete perché credete che questa fase sia la più importante."
+        },
+        {
+          "tipo": "quiz",
+          "testo": "Un modello ha il 99% di accuratezza sui dati di addestramento e il 60% su dati nuovi. Cosa succede?",
+          "opzioni": [
+            "Overfitting: ha imparato a memoria i dati di addestramento",
+            "Il modello è perfetto",
+            "Mancano le GPU",
+            "È un modello non supervisionato"
+          ],
+          "corretta": 0,
+          "spiegazione": "Con l'overfitting il modello va benissimo sui dati che ha visto e male su quelli nuovi. Si scopre in fase di valutazione, su dati di test separati."
+        },
+        {
+          "tipo": "turbo"
+        }
+      ]
+    },
+    {
+      "nome": "Sprint: in produzione",
+      "doppi": true,
+      "round": [
+        {
+          "tipo": "sincronia",
+          "testo": "Senza parlarvi! Il segnale che un modello in produzione va ricontrollato è…",
+          "opzioni": [
+            "Errori in aumento",
+            "Lamentele degli utenti",
+            "Dati cambiati",
+            "Nuove regole"
+          ],
+          "spunto": "Il mondo cambia e i modelli invecchiano: chi, nella vostra organizzazione, se ne accorgerebbe? È il monitoraggio di MLOps."
+        },
+        {
+          "tipo": "stima",
+          "testo": "Quante competenze della categoria Deep Tech contiene il catalogo AIM-PRO?",
+          "unita": "competenze",
+          "valore": 26,
+          "min": 0,
+          "max": 60,
+          "spiegazione": "Le 26 competenze Deep Tech riguardano machine learning, reti neurali, ingegneria, messa in produzione, MLOps e Digital Twin."
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "sequenza",
+          "nome": "Finestra di contesto",
+          "come": "Guarda la sequenza di colori e ripetila: ogni livello è più lungo. Conta il livello più alto raggiunto.",
+          "durata": 40
+        }
+      ]
+    }
+  ]
+}

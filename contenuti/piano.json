@@ -1,0 +1,75 @@
+{
+  "_nota": "Piano delle partite generate con l'LLM locale (scripts/genera-sessioni.mjs). La partita 01 è scritta a mano. 'schema' sceglie la sequenza di meccaniche (A, B, C).",
+  "sessioni": [
+    {
+      "id": "02", "schema": "A",
+      "titolo": "Dentro un LLM",
+      "tema": "Come funzionano i grandi modelli linguistici: token, previsione della parola successiva, addestramento, allucinazioni, limiti e punti di forza.",
+      "tappe": ["Token e previsioni", "Allucinazioni", "Sprint: limiti e forze"]
+    },
+    {
+      "id": "03", "schema": "B",
+      "titolo": "L'arte del prompt",
+      "tema": "Prompting efficace (cluster P8): struttura del prompt, ruolo, contesto, esempi few-shot, vincoli di formato, raffinamento iterativo, verifica dell'output.",
+      "tappe": ["Anatomia di un prompt", "Esempi e vincoli", "Sprint: itera e verifica"]
+    },
+    {
+      "id": "04", "schema": "C",
+      "titolo": "Fidarsi, ma verificare",
+      "tema": "Valutazione critica degli output dell'AI: verifica delle fonti, allucinazioni, RAG, rilevatori di testo AI, deepfake, trasparenza e indicatori di qualità.",
+      "tappe": ["Fonti e prove", "Deepfake e trasparenza", "Sprint: il fact-checker"]
+    },
+    {
+      "id": "05", "schema": "A",
+      "titolo": "Dati e privacy",
+      "tema": "Dati personali e AI: GDPR, minimizzazione dei dati, dati sanitari come categorie particolari, strumenti approvati dall'organizzazione, anonimizzazione, qualità dei dati.",
+      "tappe": ["Che dati diamo all'AI?", "GDPR in pratica", "Sprint: dati di qualità"]
+    },
+    {
+      "id": "06", "schema": "B",
+      "titolo": "AI Act in pratica",
+      "tema": "Il Regolamento UE sull'AI (AI Act): livelli di rischio, pratiche vietate, sistemi ad alto rischio, obblighi di trasparenza, obbligo di AI literacy (articolo 4), date di applicazione, sanzioni.",
+      "smista_categorie": ["Vietato", "Alto rischio", "Obbligo di trasparenza", "Rischio minimo"],
+      "tappe": ["La piramide del rischio", "Cosa è vietato", "Sprint: compliance"]
+    },
+    {
+      "id": "07", "schema": "C",
+      "titolo": "Bias, etica e controllo umano",
+      "tema": "Bias nei dati e nei modelli, equità, responsabilità, supervisione umana (human in the loop), potenziamento e non sostituzione delle persone, caso Elena HR Director e screening dei candidati.",
+      "tappe": ["Da dove nasce il bias", "Il caso Elena", "Sprint: l'umano decide"]
+    },
+    {
+      "id": "08", "schema": "A",
+      "titolo": "Green AI: misurare l'impronta",
+      "tema": "Impronta energetica e di carbonio dell'AI: wattora, CO2 equivalente, intensità carbonica della rete, addestramento vs inferenza, strumenti di misura (CodeCarbon, RAPL, powermetrics), PUE dei data center.",
+      "tappe": ["Energia e carbonio", "Come si misura", "Sprint: il data center"]
+    },
+    {
+      "id": "09", "schema": "B",
+      "titolo": "Green AI: scelte sostenibili",
+      "tema": "Pratiche di AI sostenibile: scegliere il modello più piccolo adatto, evitare sprechi, riuso di modelli, energia rinnovabile, vincoli di sostenibilità negli scenari di apprendimento, competenze Green di AIM-PRO e GreenComp.",
+      "smista_categorie": ["Sostenibile", "Spreco"],
+      "tappe": ["Piccolo è bello", "Abitudini green", "Sprint: budget di CO2"]
+    },
+    {
+      "id": "10", "schema": "C",
+      "titolo": "Machine learning senza paura",
+      "tema": "Concetti Deep Tech: apprendimento supervisionato, non supervisionato e per rinforzo, dati di addestramento e di test, overfitting, reti neurali, ciclo di vita del machine learning e MLOps.",
+      "smista_categorie": ["Supervisionato", "Non supervisionato", "Per rinforzo"],
+      "tappe": ["Come impara una macchina", "Il ciclo di vita", "Sprint: in produzione"]
+    },
+    {
+      "id": "11", "schema": "A",
+      "titolo": "Agenti AI e lavoro che cambia",
+      "tema": "Agenti AI che usano strumenti e compiono azioni, supervisione umana, flussi di lavoro professionali con l'AI, gestione del cambiamento, resilienza e imprenditorialità (categoria Resilience & Entrepreneurial, EntreComp).",
+      "tappe": ["Dall'assistente all'agente", "Il team che cambia", "Sprint: innovare con giudizio"]
+    },
+    {
+      "id": "12", "schema": "B",
+      "titolo": "Gran finale AIM-PRO",
+      "tema": "Il progetto AIM-PRO: le 104 competenze nelle 4 categorie (Digital, Green, Resilience & Entrepreneurial, Deep Tech), livelli Foundation/Intermediate/Advanced, KSA, cluster e certificazione, i quattro temi dei bisogni (potenziamento, trasparenza, tempo, riconoscimento), il workshop dell'Aquila, i destinatari HE, VET e PMI.",
+      "smista_categorie": ["Digital", "Green", "Resilience & Entrepreneurial", "Deep Tech"],
+      "tappe": ["Le 4 famiglie di competenze", "Dal bisogno al framework", "Sprint finale"]
+    }
+  ]
+}

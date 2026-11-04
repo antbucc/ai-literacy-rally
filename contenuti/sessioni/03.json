@@ -1,0 +1,169 @@
+{
+  "titolo": "L'arte del prompt",
+  "tema": "Prompting efficace (cluster P8): struttura del prompt, ruolo, contesto, esempi few-shot, vincoli di formato, raffinamento iterativo, verifica dell'output.",
+  "generato": {
+    "modello": "qwen2.5:14b",
+    "data": "2026-11-04",
+    "rivisto": true
+  },
+  "tappe": [
+    {
+      "nome": "Anatomia di un prompt",
+      "doppi": false,
+      "round": [
+        {
+          "tipo": "quiz",
+          "testo": "Quale di questi elementi NON serve a scrivere un buon prompt?",
+          "opzioni": [
+            "Il ruolo che deve assumere l'AI",
+            "Il contesto e i dati necessari",
+            "Il formato atteso della risposta",
+            "Le parole importanti scritte in MAIUSCOLO"
+          ],
+          "corretta": 3,
+          "spiegazione": "Ruolo, contesto, obiettivo e formato danno al modello informazioni utili. Maiuscole ed esclamativi non aggiungono informazioni."
+        },
+        {
+          "tipo": "smista",
+          "testo": "Smista i pezzi di questo prompt: che cosa sono?",
+          "categorie": [
+            "Ruolo",
+            "Contesto",
+            "Vincolo di formato",
+            "Esempio (few-shot)"
+          ],
+          "elementi": [
+            {
+              "testo": "Sei un tutor di statistica per principianti",
+              "categoria": 0
+            },
+            {
+              "testo": "Il pubblico sono 30 neoassunti dell'ufficio vendite",
+              "categoria": 1
+            },
+            {
+              "testo": "Rispondi con una tabella a 3 colonne",
+              "categoria": 2
+            },
+            {
+              "testo": "Massimo 100 parole",
+              "categoria": 2
+            },
+            {
+              "testo": "\"Servizio ottimo\" → Positivo",
+              "categoria": 3
+            },
+            {
+              "testo": "Ti allego il verbale della riunione di ieri",
+              "categoria": 1
+            }
+          ],
+          "spiegazione": "Un buon prompt combina ruolo, contesto (pubblico, dati, documenti), vincoli di formato ed eventualmente esempi che mostrano la risposta attesa."
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "sequenza",
+          "nome": "Finestra di contesto",
+          "come": "Guarda la sequenza di colori e ripetila: ogni livello è più lungo. Conta il livello più alto raggiunto.",
+          "durata": 40
+        }
+      ]
+    },
+    {
+      "nome": "Esempi e vincoli",
+      "doppi": false,
+      "round": [
+        {
+          "tipo": "sincronia",
+          "testo": "Senza parlarvi! L'ingrediente del prompt che fa più differenza è…",
+          "opzioni": [
+            "Il ruolo",
+            "Il contesto",
+            "Gli esempi",
+            "Il formato"
+          ],
+          "spunto": "Le squadre in sintonia: perché? Mostrate un prompt che usate davvero nel vostro lavoro."
+        },
+        {
+          "tipo": "quiz",
+          "testo": "A cosa servono gli esempi few-shot in un prompt?",
+          "opzioni": [
+            "A mostrare al modello forma e stile della risposta attesa",
+            "A riaddestrare il modello in modo permanente",
+            "A ridurre il costo della richiesta",
+            "A nascondere le istruzioni al modello"
+          ],
+          "corretta": 0,
+          "spiegazione": "Gli esempi nel prompt guidano la risposta solo in quella conversazione: il modello non viene modificato. Esempi chiari e coerenti producono risposte più coerenti."
+        },
+        {
+          "tipo": "vero_falso",
+          "affermazioni": [
+            {
+              "testo": "Un prompt più lungo dà sempre una risposta migliore.",
+              "vero": false
+            },
+            {
+              "testo": "Chiedere un formato preciso, come una tabella, rende la risposta più facile da usare.",
+              "vero": true
+            },
+            {
+              "testo": "Gli esempi few-shot modificano in modo permanente il modello.",
+              "vero": false
+            },
+            {
+              "testo": "Assegnare un ruolo all'AI può cambiare tono e livello della risposta.",
+              "vero": true
+            },
+            {
+              "testo": "Spesso conviene migliorare il prompt in più passaggi, leggendo le risposte.",
+              "vero": true
+            },
+            {
+              "testo": "Se il prompt è scritto bene, non serve verificare la risposta.",
+              "vero": false
+            }
+          ],
+          "spiegazione": "Conta la qualità delle informazioni, non la lunghezza. Il prompting è iterativo, e anche il miglior prompt non elimina la necessità di verificare."
+        },
+        {
+          "tipo": "turbo"
+        }
+      ]
+    },
+    {
+      "nome": "Sprint: itera e verifica",
+      "doppi": true,
+      "round": [
+        {
+          "tipo": "ordina",
+          "testo": "Metti in ordine un ciclo di prompting iterativo",
+          "elementi": [
+            "Definisci obiettivo e destinatari",
+            "Scrivi un primo prompt con ruolo e contesto",
+            "Leggi e valuta la risposta",
+            "Aggiungi vincoli o esempi dove serve",
+            "Verifica il risultato prima di usarlo"
+          ],
+          "spiegazione": "Si parte dall'obiettivo, si prova, si valuta e si raffina. La verifica finale resta sempre a chi usa il risultato."
+        },
+        {
+          "tipo": "stima",
+          "testo": "In AIM-PRO il prompting è il cluster P8. Quanti cluster di competenze ci sono in tutto?",
+          "unita": "cluster",
+          "valore": 40,
+          "min": 5,
+          "max": 100,
+          "spiegazione": "Le competenze AIM-PRO sono raggruppate in 40 cluster, organizzati in 8 domini. Il cluster P8 riguarda prompting e uso multimodale strutturato."
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "tap",
+          "nome": "Addestramento lampo",
+          "come": "Tocca il pulsante più veloce che puoi: ogni tocco è un ciclo di addestramento. Conta la media della squadra.",
+          "durata": 15
+        }
+      ]
+    }
+  ]
+}

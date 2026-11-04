@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@600;700;800&display=swap');
+
+:root {
+  --carta: #FFF4DC;
+  --carta2: #FBE7BF;
+  --bianco: #FFFDF7;
+  --inchiostro: #2A2420;
+  --tenue: #6E5F52;
+  --sabbia: #E8CF9A;
+  --salvia: #B9D7A8;
+  --arancio: #F08A4B;
+  --giallo: #F2C14E;
+  --cielo: #7CC4E8;
+  --rosa: #EE7FA8;
+  --verde: #7CC46A;
+  --viola: #A98BE0;
+  --rosso: #E5604D;
+  --o0: #EE7FA8;
+  --o1: #7CC4E8;
+  --o2: #F2C14E;
+  --o3: #8FD07E;
+  --o4: #A98BE0;
+  --o5: #F08A4B;
+  --tratto: 6px;
+  --titoli: 'Baloo 2', 'Nunito', system-ui, sans-serif;
+  --testo: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; font-family: var(--testo); font-weight: 700; color: var(--inchiostro); background: var(--carta); }
+h1, h2, h3 { font-family: var(--titoli); font-weight: 800; margin: 0; line-height: 1.05; }
+button { font: inherit; cursor: pointer; color: inherit; }
+
+/* elementi "disegnati": contorno spesso e ombra piena */
+.carta { background: var(--bianco); border: var(--tratto) solid var(--inchiostro); border-radius: 36px; box-shadow: 0 8px 0 var(--inchiostro); }
+.pillola-scura { display: inline-block; background: var(--inchiostro); color: var(--carta); border-radius: 999px; padding: 6px 22px; font-family: var(--titoli); font-weight: 800; text-transform: uppercase; letter-spacing: .03em; }
+.lettera { display: inline-grid; place-items: center; flex: none; border-radius: 50%; background: var(--bianco); border: 4px solid var(--inchiostro); font-family: var(--titoli); font-weight: 800; color: var(--inchiostro); }
+.o0 { --oc: var(--o0); } .o1 { --oc: var(--o1); } .o2 { --oc: var(--o2); }
+.o3 { --oc: var(--o3); } .o4 { --oc: var(--o4); } .o5 { --oc: var(--o5); }
+
+@keyframes entra { from { opacity: 0; transform: translateY(24px) scale(.97); } to { opacity: 1; transform: none; } }
+@keyframes pulsa { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.07); } }
+@keyframes dondola { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
+@keyframes saltella { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.entra > * { animation: entra .5s cubic-bezier(.2,.8,.2,1) both; }
+.entra > *:nth-child(2) { animation-delay: .08s; }
+.entra > *:nth-child(3) { animation-delay: .16s; }
+.entra > *:nth-child(4) { animation-delay: .24s; }
+.mascotte { animation: dondola 3s ease-in-out infinite; transform-origin: 50% 90%; }
+
+/* ---------- animali animati (vedi js/animali.js) */
+.animale { display: block; overflow: visible; }
+.animale .an-tutto { transform-origin: 60px 122px; animation: an-respira 2.6s ease-in-out infinite; animation-delay: var(--rit, 0s); }
+.animale .an-occhi { transform-box: fill-box; transform-origin: center; animation: an-batti 4.6s infinite; animation-delay: var(--rit, 0s); }
+.animale .an-orecchie { transform-box: fill-box; transform-origin: 50% 100%; animation: an-orecchie 3.4s ease-in-out infinite; animation-delay: var(--rit, 0s); }
+.animale .an-braccio { transform-box: fill-box; transform-origin: 50% 15%; }
+.animale.an-rana .an-orecchie, .animale.an-pinguino .an-orecchie { animation: none; }
+@keyframes an-respira { 0%, 100% { transform: scale(1, 1); } 50% { transform: scale(1.035, .965); } }
+@keyframes an-batti { 0%, 91%, 100% { transform: scaleY(1); } 94% { transform: scaleY(.08); } }
+@keyframes an-orecchie { 0%, 100% { transform: rotate(0); } 30% { transform: rotate(-4deg); } 60% { transform: rotate(3deg); } }
+
+/* in cammino sul percorso: saltelli */
+.animale.cammina .an-tutto { animation: an-salto .34s ease-in-out infinite; }
+.animale.cammina .an-braccio.sx { animation: an-dondola-sx .34s ease-in-out infinite alternate; }
+.animale.cammina .an-braccio.dx { animation: an-dondola-dx .34s ease-in-out infinite alternate; }
+@keyframes an-salto { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-13px) rotate(-4deg); } }
+@keyframes an-dondola-sx { from { transform: rotate(-20deg); } to { transform: rotate(25deg); } }
+@keyframes an-dondola-dx { from { transform: rotate(20deg); } to { transform: rotate(-25deg); } }
+
+/* festa: salti e braccia in alto */
+.animale.felice .an-tutto { animation: an-festa .7s ease-in-out infinite; }
+.animale.felice .an-braccio.sx { animation: an-braccia-sx .35s ease-in-out infinite alternate; }
+.animale.felice .an-braccio.dx { animation: an-braccia-dx .35s ease-in-out infinite alternate; }
+@keyframes an-festa { 0%, 100% { transform: translateY(0) scale(1.04, .96); } 45% { transform: translateY(-20px) scale(.97, 1.03); } }
+@keyframes an-braccia-sx { from { transform: rotate(60deg); } to { transform: rotate(110deg); } }
+@keyframes an-braccia-dx { from { transform: rotate(-60deg); } to { transform: rotate(-110deg); } }
+
+/* un po' giù di morale */
+.animale.triste .an-tutto { animation: an-triste 3s ease-in-out infinite; }
+.animale.triste .an-orecchie { animation: none; transform: rotate(6deg) translateY(4px); }
+@keyframes an-triste { 0%, 100% { transform: scale(1.03, .95) rotate(-3deg); } 50% { transform: scale(1.03, .95) rotate(3deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .animale .an-tutto, .animale .an-occhi, .animale .an-orecchie, .animale .an-braccio { animation: none !important; }
+}

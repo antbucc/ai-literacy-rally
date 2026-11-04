@@ -1,0 +1,167 @@
+{
+  "titolo": "Green AI: scelte sostenibili",
+  "tema": "Pratiche di AI sostenibile: scegliere il modello più piccolo adatto, evitare sprechi, riuso di modelli, energia rinnovabile, vincoli di sostenibilità negli scenari di apprendimento, competenze Green di AIM-PRO e GreenComp.",
+  "generato": {
+    "modello": "qwen2.5:14b",
+    "data": "2026-11-04",
+    "rivisto": true
+  },
+  "tappe": [
+    {
+      "nome": "Piccolo è bello",
+      "doppi": false,
+      "round": [
+        {
+          "tipo": "quiz",
+          "testo": "Perché, quando basta, conviene usare un modello di AI più piccolo?",
+          "opzioni": [
+            "Consumano meno energia per inferenza",
+            "Richiedono meno dati per l'addestramento",
+            "Danno sempre risposte più precise",
+            "Sono più facili da implementare"
+          ],
+          "corretta": 0,
+          "spiegazione": "I modelli più piccoli consumano meno energia durante l'inferenza, riducendo così le emissioni di CO2."
+        },
+        {
+          "tipo": "smista",
+          "testo": "Smista: scelta sostenibile o spreco?",
+          "categorie": [
+            "Sostenibile",
+            "Spreco"
+          ],
+          "elementi": [
+            {
+              "testo": "Usare il modello più grande per correggere un refuso",
+              "categoria": 1
+            },
+            {
+              "testo": "Un modello piccolo adatto al compito",
+              "categoria": 0
+            },
+            {
+              "testo": "Usare un modello già pronto invece di addestrarne uno nuovo",
+              "categoria": 0
+            },
+            {
+              "testo": "Rigenerare la risposta dieci volte senza cambiare il prompt",
+              "categoria": 1
+            },
+            {
+              "testo": "Raggruppare più domande in una sola richiesta",
+              "categoria": 0
+            },
+            {
+              "testo": "Lasciare server con GPU accesi e inutilizzati",
+              "categoria": 1
+            }
+          ],
+          "spiegazione": "Sostenibile vuol dire usare la potenza che serve, quando serve. Rigenerazioni inutili e risorse accese a vuoto sono sprechi che si sommano."
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "sequenza",
+          "nome": "Finestra di contesto",
+          "come": "Guarda la sequenza di colori e ripetila: ogni livello è più lungo. Conta il livello più alto raggiunto.",
+          "durata": 40
+        }
+      ]
+    },
+    {
+      "nome": "Abitudini green",
+      "doppi": false,
+      "round": [
+        {
+          "tipo": "sincronia",
+          "testo": "Senza parlarvi! L'abitudine più importante per ridurre l'impatto ambientale dell'AI è…",
+          "opzioni": [
+            "Energia rinnovabile",
+            "Modelli piccoli",
+            "Riusare i modelli",
+            "Meno richieste inutili"
+          ],
+          "spunto": "Discutete: quale di queste abitudini potete adottare già da domani?"
+        },
+        {
+          "tipo": "quiz",
+          "testo": "Quale abitudine riduce maggiormente l'impatto ambientale del tuo utilizzo quotidiano dell'AI?",
+          "opzioni": [
+            "Usare modelli più piccoli",
+            "Usare sempre l'AI più potente",
+            "Evitare di riusare i modelli esistenti",
+            "Mantenere i dispositivi obsoleti"
+          ],
+          "corretta": 0,
+          "spiegazione": "Usare modelli più piccoli riduce l'energia e le emissioni di CO2, essendo più efficienti e adatti ai compiti."
+        },
+        {
+          "tipo": "vero_falso",
+          "affermazioni": [
+            {
+              "testo": "Una richiesta a un chatbot non consuma energia, perché è \"nel cloud\".",
+              "vero": false
+            },
+            {
+              "testo": "Evitare le rigenerazioni inutili riduce l'energia consumata.",
+              "vero": true
+            },
+            {
+              "testo": "Riusare un modello già addestrato evita l'energia di un nuovo addestramento.",
+              "vero": true
+            },
+            {
+              "testo": "Preferire data center con energia rinnovabile riduce le emissioni.",
+              "vero": true
+            },
+            {
+              "testo": "Milioni di piccole richieste possono pesare più di un singolo addestramento.",
+              "vero": true
+            },
+            {
+              "testo": "La sostenibilità dell'AI si misura solo in energia consumata.",
+              "vero": false
+            }
+          ],
+          "spiegazione": "Il cloud consuma energia reale. Contano energia, emissioni, efficienza dell'hardware e volume d'uso: l'inferenza quotidiana si moltiplica per milioni di richieste."
+        },
+        {
+          "tipo": "turbo"
+        }
+      ]
+    },
+    {
+      "nome": "Sprint: budget di CO2",
+      "doppi": true,
+      "round": [
+        {
+          "tipo": "ordina",
+          "testo": "Metti in ordine: come impostare un budget di CO2 per un'attività con l'AI",
+          "elementi": [
+            "Misura il consumo attuale",
+            "Fissa una soglia massima di energia o CO2",
+            "Scegli modelli e impostazioni per restarci dentro",
+            "Controlla i consumi durante l'uso",
+            "Se superi la soglia: avvisa, sostituisci o riduci"
+          ],
+          "spiegazione": "Nel framework AIM-PRO una soglia di sostenibilità ha anche una politica per quando viene superata: avvisare, bloccare, sostituire il modello o ridurre il servizio."
+        },
+        {
+          "tipo": "stima",
+          "testo": "Quante competenze di sostenibilità definisce GreenComp, il framework europeo usato da AIM-PRO?",
+          "unita": "competenze",
+          "valore": 12,
+          "min": 1,
+          "max": 50,
+          "spiegazione": "GreenComp definisce 12 competenze di sostenibilità in 4 aree. AIM-PRO le adatta all'AI nelle sue 25 competenze Green."
+        },
+        {
+          "tipo": "minigioco",
+          "gioco": "tap",
+          "nome": "Addestramento lampo",
+          "come": "Tocca il pulsante più veloce che puoi: ogni tocco è un ciclo di addestramento. Conta la media della squadra.",
+          "durata": 15
+        }
+      ]
+    }
+  ]
+}
